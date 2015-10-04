@@ -20,7 +20,7 @@ Notable planned features
 
 - awesome search
 - nice URLs
-- playlists
+- “playlists”
 - offline usage
 - transposing chords
 - support for displaying other things besides lyrics with chords (notes, tabs, etc.)
@@ -28,15 +28,22 @@ Notable planned features
 - syncing view across devices (as when there is a lot of people, manually syncing several computers to show the same thing becomes annoying)
 - easily extensible
 
-Requirements
-------------
-
-- [node.js](https://nodejs.org/) and npm
-- [webpack](http://webpack.github.io/) (`npm install -g webpack`)
-
 Using...
 --------
 
 - [React](https://facebook.github.io/react)
 - [webpack](http://webpack.github.io/)
 - (will be) running on [Heroku](https://heroku.com/)
+
+Development Quick Start
+-----------------------
+
+### The backend: `server/`
+
+TODO
+
+### The frontend: `web/`
+
+- requires [node.js](https://nodejs.org/) and npm
+- install dependencies: `npm install`
+- dev server: run `node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors`, open http://localhost:8080/webpack-dev-server/bundle and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
