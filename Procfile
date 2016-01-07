@@ -1,1 +1,1 @@
-web: $(npm bin)/webpack-dev-server --port $PORT
+web: node server
