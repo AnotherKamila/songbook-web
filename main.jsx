@@ -1,5 +1,7 @@
-require("./style.sass");
-React = require("react")
-AppComponent = require("./ui/AppComponent.jsx")
+ReactDOM = require('react-dom')
+Songbook = require('./ui/Songbook.jsx')
+require('./main.sass')
 
-React.render(<AppComponent />, document.body)
+console.log('=====', 'loaded', new Date(), '=====')
+var root = document.getElementById('songbook') || document.body
+ReactDOM.render(<Songbook />, root)
