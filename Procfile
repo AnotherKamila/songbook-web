@@ -1,1 +1,1 @@
-web: python server.py
+web: $(npm bin)/webpack-dev-server --port $PORT

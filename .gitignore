@@ -1,5 +1,6 @@
-# Logs
-*.log
+# Build
+bundle.js
+bundle.js.map
 
-# python-related
-venv/
+# Dependencies
+node_modules

@@ -1,7 +1,7 @@
 {
-  "name": "songbook",
+  "name": "songbook-web",
   "version": "0.0.1",
-  "url": "https://github.com/AnotherKamila/songbook/",
+  "url": "https://github.com/AnotherKamila/songbook-web/",
   "description": "A HTML5 songbook/sheet music organizer.",
   "dependencies": {},
   "devDependencies": {
@@ -17,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/AnotherKamila/songbook.git"
+    "url": "git://github.com/AnotherKamila/songbook-web.git"
   },
   "author": "Kamila Součková <kamila@ksp.sk>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AnotherKamila/songbook/issues"
+    "url": "https://github.com/AnotherKamila/songbook-web/issues"
   }
 }

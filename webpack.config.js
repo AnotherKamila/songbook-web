@@ -3,7 +3,7 @@ module.exports = {
 	devtool: "source-map",
     entry: "./main.jsx",
     output: {
-    	path: __dirname+"/public",
+    	path: __dirname,
         filename: "bundle.js"
     },
     resolve: {

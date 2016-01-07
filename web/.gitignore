@@ -1,6 +1,0 @@
-# Build
-public/bundle.js
-public/bundle.js.map
-
-# Dependencies
-node_modules
