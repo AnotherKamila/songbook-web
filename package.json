@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "url": "https://github.com/AnotherKamila/songbook-web/",
   "description": "A HTML5 songbook/sheet music organizer.",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "webpack": "~1.12.2",
     "sass-loader": "~3.0.0",
     "style-loader": "~0.12.4",
