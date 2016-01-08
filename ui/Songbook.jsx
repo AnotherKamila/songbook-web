@@ -1,13 +1,14 @@
-React = require("react");
-require('./Songbook.sass');
+import React from "react"
+import './Songbook.sass'
 
-var Songbook = React.createClass({
-	render: function() {
+export class Songbook extends React.Component {
+	render() {
 		return (
 			<div className="test">
 				Hello, world! says the Songbook component
 			</div>
-		);
+		)
 	}
-});
-module.exports = Songbook;
+}
+
+export default Songbook

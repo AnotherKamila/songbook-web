@@ -14,7 +14,11 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM"},
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+            },
             {test: /\.sass$/, loaders: ["style", "css?sourceMap", "sass?indentedSyntax,sourceMap"]},
             {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'}
 
