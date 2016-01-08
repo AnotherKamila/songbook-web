@@ -33,17 +33,14 @@ Using...
 
 - [React](https://facebook.github.io/react)
 - [webpack](http://webpack.github.io/)
-- (will be) running on [Heroku](https://heroku.com/)
+- running on [Heroku](https://heroku.com/)
 
 Development Quick Start
 -----------------------
 
-### The backend: `server/`
-
-TODO
-
-### The frontend: `web/`
+Note: This is the web front-end. The backend/API is [AnotherKamila/songbook-api](https://github.com/AnotherKamila/songbook-api).
 
 - requires [node.js](https://nodejs.org/) and npm
 - install dependencies: `npm install`
-- dev server: run `node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors`, open http://localhost:8080/webpack-dev-server/bundle and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
+- start prod server: `node server` (or `heroku local`)
+- dev server: run `./devserver.sh`, open [localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
