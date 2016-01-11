@@ -44,3 +44,4 @@ Note: This is the web front-end. The backend/API is [AnotherKamila/songbook-api]
 - install dependencies: `npm install`
 - start prod server: `node server` (or `heroku local`)
 - dev server: run `./devserver.sh`, open [localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
+- It will attempt to connect to the backend at the URL written in `public/API_URL.conf`. If using the prod server, you should instead set the `API_URL` environment variable.
