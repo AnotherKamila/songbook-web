@@ -17,7 +17,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react' ]
             },
             {test: /\.sass$/, loaders: ["style", "css?sourceMap", "sass?indentedSyntax,sourceMap"]},
             {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'}
