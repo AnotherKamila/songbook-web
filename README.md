@@ -1,6 +1,10 @@
 Songbook
 ========
 
+[![Heroku status](https://heroku-badge.herokuapp.com/?app=spevnik47)](https://spevnik47-web.herokuapp.com/)
+[![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://floobits.com/kamila/songbook/redirect)
+[![Floobits Status](https://floobits.com/kamila/songbook.svg)](https://floobits.com/kamila/songbook/redirect)
+
 Yet another iteration of my HTML5 songbook attempt. Wheeeee!
 ------------------------------------------------------------
 
