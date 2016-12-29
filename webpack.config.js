@@ -3,13 +3,13 @@ path = require('path')
 
 module.exports = {
     devtool: "source-map",
-    entry: "./main.jsx",
+    entry: './main.jsx',
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        path: path.resolve(__dirname, 'public')
     },
     resolve: {
-        extensions: ["", ".jsx", ".js"],
+        extensions: ["", ".jsx", ".js", ".css"],
         modulesDirectories: ["node_modules"]
     },
     module: {
@@ -17,10 +17,12 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react' ]
+                loaders: [ 'react-hot', 'babel' ]
             },
             {test: /\.sass$/, loaders: ["style", "css?sourceMap", "sass?indentedSyntax,sourceMap"]},
-            {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'}
+            {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'},
+            {test: /\.svg$/, loader: 'svg-url-loader'},
+            {test: /\.ya?ml$/, loaders: ['json', 'yaml']}
 
         ]
     }
