@@ -14,6 +14,7 @@
     "express": "^4.13.3",
     "flux": "^3.1.2",
     "json-loader": "^0.5.4",
+    "material-ui": "^0.16.6",
     "node-sass": "~4.1.1",
     "normalize.css": "^5.0.0",
     "react": "~15.4.1",
@@ -36,13 +37,14 @@
     "yaml-loader": "^0.4.0"
   },
   "devDependencies": {
+    "babel-plugin-material-ui": "^0.3.0",
     "eslint": "^3.12.2",
     "eslint-plugin-react": "^6.8.0",
     "webpack-dev-server": "~1.16.2"
   },
   "scripts": {
-    "start": "$(npm bin)/webpack-dev-server --inline --hot --content-base public/ --history-api-fallback",
-    "build": "$(npm bin)/webpack --colors --progress"
+    "build": "$(npm bin)/webpack --colors --progress",
+    "start": "$(npm bin)/webpack-dev-server --inline --hot --content-base public/ --history-api-fallback --port 8000"
   },
   "repository": {
     "type": "git",

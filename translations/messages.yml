@@ -1,0 +1,15 @@
+sk:
+  app.title: Spevník
+
+  route.home: Môj spevník
+  route.settings: Nastavenia
+
+  settings.label.lang: Jazyk
+
+en:
+  app.title: Songbook
+
+  route.home: My songbook
+  route.settings: Settings
+
+  settings.label.lang: Language

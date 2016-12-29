@@ -1,13 +1,11 @@
-import Songbook from './songbook/Songbook.jsx'
-import './main.sass'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'webpack-zepto'
 
-var root = document.getElementById('songbook') || document.body
-$.get('/API_URL.conf', (response) => {
-    response = response.trim()
-    console.log('=====', 'loaded', new Date(), '=====')
-    console.log('API URL:', response)
-    ReactDOM.render(<Songbook api_url={response} />, root)
-})
+import {Songbook, create_store} from './songbook'
+
+import './root.sass'
+
+const store = create_store()
+window.store = store // for debugging
+let root = document.getElementById('songbook') || document.body
+ReactDOM.render(<Songbook store={store}/>, root)
