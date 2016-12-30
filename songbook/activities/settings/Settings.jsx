@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {FormattedMessage} from 'react-intl'
 
-import messages from '../../translations/messages.yml'
+import messages from '../../../translations/messages.yml'
 
 import {CHANGE} from './actions.js'
 

@@ -1,55 +1,66 @@
 import React from 'react'
 
 import thunkMiddleware from 'redux-thunk'
-import {combineReducers, applyMiddleware} from 'redux'
+import {combineReducers, applyMiddleware, compose} from 'redux'
+import persistState from 'redux-localstorage'
 import createLogger from 'redux-logger'
 import {Provider} from 'react-redux'
 import {Router, Route, hashHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import {IntlProvider, addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import sk from 'react-intl/locale-data/sk'
+import messages from '../translations/messages.yml'
 
-import { Container, DefaultRoute } from './Container.jsx'
+import {Container, container_reducer} from './container'
+
+///// INIT /////
 
 export const init = (store) => {
+    // Needed for onTouchTap
+    // http://stackoverflow.com/a/34015469/988941
+    injectTapEventPlugin();
+
     addLocaleData([...en, ...sk])
 }
 
-export const middleware = applyMiddleware(
-    thunkMiddleware,
-    createLogger({collapsed: true})
+///// STATE /////
+
+export const app_reducer = combineReducers({
+    'container': container_reducer,
+})
+
+///// MIDDLEWARE /////
+
+export const middleware = compose(
+    applyMiddleware(
+        thunkMiddleware,
+        createLogger({collapsed: true})
+    ),
+    persistState()
 )
 
-const AppFilling = ({store, routes}) => (
+///// COMPONENT /////
+
+export const AppLasagna = ({store, routes, language}) => (
     <Provider store={store}>
         <MuiThemeProvider>
-            <Router history={syncHistoryWithStore(hashHistory, store)}>
-                <Route component={Container}>
-                    {routes.map(({name, path, component}) => <Route key={name} path={path} component={component}/>)}
-                    <Route path='*' component={DefaultRoute} />
-                </Route>
-            </Router>
+            <IntlProvider locale={language} messages={messages[language]}>
+                <Router history={syncHistoryWithStore(hashHistory, store)}>
+                    <Route component={Container}>
+                        {routes.map(({name, path, component}) => <Route key={name} path={path} component={component}/>)}
+                    </Route>
+                </Router>
+            </IntlProvider>
         </MuiThemeProvider>
     </Provider>
 )
-AppFilling.propTypes = {
-    store: React.PropTypes.object.isRequired,
-    routes: React.PropTypes.array.isRequired,
-}
-
-// split into two layers so that poor react-router isn't confused about some
-// (irrelevant) property changes
-export const AppLasagna = (props) => (
-   <IntlProvider locale={props.language} messages={props.messages}>
-        <AppFilling {...props} />
-    </IntlProvider>
-)
 AppLasagna.propTypes = {
-    store: React.PropTypes.object.isRequired,
+    store:    React.PropTypes.object.isRequired,
+    routes:   React.PropTypes.array.isRequired,
     language: React.PropTypes.string.isRequired,
-    messages: React.PropTypes.object.isRequired,
 }

@@ -1,15 +1,27 @@
 sk:
   app.title: Spevník
 
-  route.home: Môj spevník
-  route.settings: Nastavenia
+  home.title: Môj spevník
 
+  songbooks.title: Verejné spevníky
+
+  settings.title: Nastavenia
   settings.label.lang: Jazyk
+
+  feedback.title: Napíšte mi
+
+  intro.title: Vitaj!
 
 en:
   app.title: Songbook
 
-  route.home: My songbook
-  route.settings: Settings
+  home.title: My songbook
 
+  songbooks.title: Public songbooks
+
+  settings.title: Settings
   settings.label.lang: Language
+
+  feedback.title: Feedback
+
+  intro.title: Welcome!
