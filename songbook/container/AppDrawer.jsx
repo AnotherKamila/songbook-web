@@ -11,6 +11,8 @@ import SettingsIcon from 'material-ui/svg-icons/action/settings'
 
 import {name2path} from '../activities'
 
+import './app-drawer.sass'
+
 const LEFT_NAV_TOP = [{name: 'home', icon: <HomeIcon/>}, {name: 'songbooks', icon: <ExploreIcon/>}]
 const LEFT_NAV_BOT = [{name: 'settings', icon: <SettingsIcon/>}, {name: 'feedback', icon: <FeedbackIcon/>}]
 
