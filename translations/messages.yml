@@ -1,5 +1,6 @@
 sk:
   app.title: Spevník
+  app.search_field.hint: Vyhľadávanie
 
   home.title: Môj spevník
 
@@ -14,6 +15,7 @@ sk:
 
 en:
   app.title: Songbook
+  app.search_field.hint: Search for a song
 
   home.title: My songbook
 

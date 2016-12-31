@@ -49,5 +49,3 @@ export const Settings = connect(
         },
     })
 )(SettingsForm)
-
-export default Settings

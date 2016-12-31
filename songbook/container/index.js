@@ -1,13 +1,13 @@
 import {createAction, handleActions} from 'redux-actions'
 import {connect} from 'react-redux'
+import {push as NAVIGATE_TO} from 'react-router-redux'
 
-import {ContainerView} from './Container.jsx'
+import {ContainerView} from './ContainerView.jsx'
 import {m} from '../utils'
-import {path2name} from '../activities'
 
 ///// ACTIONS /////
 
-export const DRAWER_TOGGLE = createAction('app/ui/DRAWER_TOGGLE')
+export const DRAWER_CHANGE = createAction('app/ui/DRAWER_CHANGE')
 
 ///// DEFAULT STATE /////
 
@@ -17,20 +17,24 @@ const default_state = {
 
 ///// REDUCERS /////
 export const container_reducer = handleActions({
-    'app/ui/DRAWER_TOGGLE': (state, _action) => m(state, {drawer_open: !state.drawer_open}),
+    'app/ui/DRAWER_CHANGE': (state, action) => m(state, {drawer_open: action.payload}),
 }, default_state)
 
 ///// Container //////
 
 export const Container = connect(
     state => ({
-        current_activity: {
-            name: path2name(state.routing.locationBeforeTransitions.pathname),
-        },
         drawer_open: state.app.container.drawer_open,
     }),
     dispatch => ({
-        onDrawerRequestToggle: () => dispatch(DRAWER_TOGGLE()),
+        onDrawerOpenRequestChange: (open) => dispatch(DRAWER_CHANGE(open)),
+        onDrawerNavRequestChange: (e, value) => {
+            dispatch(NAVIGATE_TO(value))
+            dispatch(DRAWER_CHANGE(false))
+        },
+        onSearch: (e, value) => {
+            console.log('Search: ', value)
+        },
     })
 )(ContainerView)
 

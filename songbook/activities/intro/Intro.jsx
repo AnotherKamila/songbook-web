@@ -2,7 +2,7 @@ import React from 'react'
 // import {connect} from 'react-redux'
 // import {FormattedMessage} from 'react-intl'
 
-class Intro extends React.Component {
+export class Intro extends React.Component {
     render() {
         return (
             <div>
@@ -13,4 +13,3 @@ class Intro extends React.Component {
     }
 }
 
-export default Intro

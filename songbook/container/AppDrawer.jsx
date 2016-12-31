@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router'
 import {FormattedMessage} from 'react-intl'
 
-import {Divider, Drawer, IconButton, MenuItem} from 'material-ui'
+import {Divider, Drawer, List, ListItem, makeSelectable} from 'material-ui'
 
 import ExploreIcon  from 'material-ui/svg-icons/action/explore'
 import HomeIcon     from 'material-ui/svg-icons/action/home'
@@ -11,34 +11,33 @@ import SettingsIcon from 'material-ui/svg-icons/action/settings'
 
 import {name2path} from '../activities'
 
-import './app-drawer.sass'
-
 const LEFT_NAV_TOP = [{name: 'home', icon: <HomeIcon/>}, {name: 'songbooks', icon: <ExploreIcon/>}]
 const LEFT_NAV_BOT = [{name: 'settings', icon: <SettingsIcon/>}, {name: 'feedback', icon: <FeedbackIcon/>}]
 
-const nav_list_item = (name, icon, onTouchTap) => (
-    <Link key={name} to={name2path(name)} activeClassName='active'>
-        <MenuItem leftIcon={icon} onTouchTap={onTouchTap}>
-            <FormattedMessage id={name+'.title'} />
-        </MenuItem>
-    </Link>
+const nav_list_item = (name, icon) => (
+        <ListItem key={name}
+                  leftIcon={icon}
+                  primaryText={<FormattedMessage id={name+'.title'} />}
+                  value={name2path(name)} />
 )
 
-export const AppDrawer = ({open, onRequestChange}) => (
+const SelectableList = makeSelectable(List);
+
+export const AppDrawer = (props) => (
     <Drawer docked={false}
-            open={open}
-            onRequestChange={onRequestChange}
+            open={props.open}
+            onRequestChange={props.onOpenRequestChange}
             className="app-drawer">
-        <div className="drawer-list-top">
-            {LEFT_NAV_TOP.map(({name, icon}) => nav_list_item(name, icon, onRequestChange))}
-        </div>
-        <Divider />
-        <div className="drawer-list-bot">
-            {LEFT_NAV_BOT.map(({name, icon}) => nav_list_item(name, icon, onRequestChange))}
-        </div>
+
+        <SelectableList value={props.location.pathname} onChange={props.onNavRequestChange}>
+            {LEFT_NAV_TOP.map(({name, icon}) => nav_list_item(name, icon))}
+            <Divider />
+            {LEFT_NAV_BOT.map(({name, icon}) => nav_list_item(name, icon))}
+        </SelectableList>
     </Drawer>
 )
 AppDrawer.propTypes = {
     open: React.PropTypes.bool.isRequired,
-    onRequestChange: React.PropTypes.func,
+    onOpenRequestChange: React.PropTypes.func,
+    onNavRequestChange: React.PropTypes.func,
 }

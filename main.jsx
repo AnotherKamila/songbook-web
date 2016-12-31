@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import {Songbook, create_store} from './songbook'
 
-import './root.sass'
+import './main.sass'
 
 let store = create_store()
 window.store = store // for debugging ONLY

@@ -2,10 +2,10 @@ import React from 'react'
 // import {connect} from 'react-redux'
 // import {FormattedMessage} from 'react-intl'
 
-export class Home extends React.Component {
+export class Songbooks extends React.Component {
     render() {
         return (
-            <span>Hello from Home</span>
+            <span className='not-implemented'>Hello from Songbooks. Not implemented yet O:-)</span>
         )
     }
 }
