@@ -1,8 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {FormattedMessage} from 'react-intl'
+import {Paper} from 'material-ui'
 
 import messages from '../../../translations/messages.yml'
+import {AppBar} from '../../container'
 
 import {CHANGE} from './actions.js'
 
@@ -41,6 +43,17 @@ SettingsForm.propTypes = {
     onLanguageChange: React.PropTypes.func,
 }
 
+const SettingsScreen = props => (
+    <div className="content-wrapper">
+        <AppBar title={<FormattedMessage id='settings.title' />} />
+        <div className='content padded'>
+            <Paper className='paper-responsive padded'>
+                <SettingsForm {...props} />
+            </Paper>
+        </div>
+    </div>
+)
+
 export const Settings = connect(
     state => state.settings,
     dispatch => ({
@@ -48,4 +61,4 @@ export const Settings = connect(
             dispatch(CHANGE({language: lang}))
         },
     })
-)(SettingsForm)
+)(SettingsScreen)

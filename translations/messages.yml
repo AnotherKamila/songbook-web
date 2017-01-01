@@ -10,7 +10,7 @@ sk:
   settings.label.lang: Jazyk
 
   feedback.title: Napíšte mi
-
+  feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfIzvHwJlmVMua0Zz9WFpv4jGrHRDzZNUvfUBui6hdJn8qByQ/viewform?embedded=true
   intro.title: Vitaj!
 
 en:
@@ -25,5 +25,6 @@ en:
   settings.label.lang: Language
 
   feedback.title: Feedback
+  feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfywW3efhyw8-Wzrdz7BYLWWQQ9uEyrDoZJaN5rJbiTtk3C4Q/viewform?embedded=true
 
   intro.title: Welcome!

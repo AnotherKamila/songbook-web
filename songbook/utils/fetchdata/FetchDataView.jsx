@@ -14,9 +14,11 @@ export class FetchDataView extends React.Component {
         const Component = this.props.component
         if (this.props.is_fetching) {
             return <CircularProgress />
-        } else {
-            return <Component data={this.props.data} {...this.props} />
         }
+        if (this.props.error) {
+            return <span className='error'>Error: {this.props.error}</span>
+        }
+        return <Component data={this.props.data} {...this.props} />
     }
 }
 FetchDataView.propTypes = {
