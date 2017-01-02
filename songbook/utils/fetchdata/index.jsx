@@ -16,7 +16,7 @@ export function with_data(state_path) {
     let actions = {}
     actions[ident+'/REQUEST'] = (state, action) => m(state, {is_fetching: true})
     actions[ident+'/RECEIVE'] = (state, action) => m(state, {data: action.payload, error: null, is_fetching: false})
-    actions[ident+'/FAIL']    = (state, action) => m(state, {error: action.payload, is_fetching: false})
+    actions[ident+'/FAIL']    = (state, action) => m(state, {is_fetching: false, error: action.payload})
     const reducer = handleActions(actions, {is_fetching: true, data: null, error: null})
 
     function extract_state(state) {

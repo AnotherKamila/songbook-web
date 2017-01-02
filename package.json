@@ -46,7 +46,7 @@
   },
   "scripts": {
     "build": "$(npm bin)/webpack --colors --progress",
-    "start": "$(npm bin)/webpack-dev-server --inline --hot --content-base public/ --history-api-fallback --port 8000"
+    "start": "$(npm bin)/webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",

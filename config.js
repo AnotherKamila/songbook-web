@@ -1,1 +1,1 @@
-export const API_URL = '//localhost:5000/'
+export const API_URL = 'https://spevnik.tumbolia.tk/api/'

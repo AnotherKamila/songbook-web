@@ -16,7 +16,10 @@ export class FetchDataView extends React.Component {
             return <CircularProgress />
         }
         if (this.props.error) {
-            return <span className='error'>Error: {this.props.error}</span>
+            return <span className='error'>Error: <pre>{this.props.error}</pre></span>
+        }
+        if (this.props.data == null) {
+            return <span>Empty response received.</span>
         }
         return <Component data={this.props.data} {...this.props} />
     }
@@ -24,5 +27,6 @@ export class FetchDataView extends React.Component {
 FetchDataView.propTypes = {
     url: React.PropTypes.string.isRequired,
     is_fetching: React.PropTypes.bool.isRequired,
+    error: React.PropTypes.string,
     data: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array]),
 }

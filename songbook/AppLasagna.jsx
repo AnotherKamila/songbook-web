@@ -48,7 +48,6 @@ export const middleware = compose(
 
 ///// COMPONENT /////
 
-console.log(songbook_theme)
 export const AppLasagna = ({store, routes, language}) => (
     <Provider store={store}>
         <MuiThemeProvider muiTheme={songbook_theme}>

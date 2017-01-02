@@ -25,5 +25,11 @@ module.exports = {
             {test: /\.ya?ml$/, loaders: ['json', 'yaml']}
 
         ]
+    },
+    devServer: {
+        hot:    true,
+        inline: true,
+        contentBase: 'public/',
+        port: 8000,
     }
-};
+}
