@@ -5,6 +5,7 @@ sk:
   home.title: Môj spevník
 
   public.title: Verejné spevníky
+  all_songs.title: Všetky verejné piesne
 
   settings.title: Nastavenia
   settings.label.lang: Jazyk
@@ -23,6 +24,7 @@ en:
   home.title: My songbook
 
   public.title: Public songbooks
+  all_songs.title: All public songs
 
   settings.title: Settings
   settings.label.lang: Language

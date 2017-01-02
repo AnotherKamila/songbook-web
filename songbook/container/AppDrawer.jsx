@@ -7,19 +7,22 @@ import {Divider, Drawer, List, ListItem, makeSelectable} from 'material-ui'
 import ExploreIcon  from 'material-ui/svg-icons/action/explore'
 import HomeIcon     from 'material-ui/svg-icons/action/home'
 import FeedbackIcon from 'material-ui/svg-icons/action/feedback'
+import ListIcon     from 'material-ui/svg-icons/action/list'
 import SettingsIcon from 'material-ui/svg-icons/action/settings'
 
 import {name2path} from '../activities'
 
-const PUBLIC_LIST = '/book/public_list'
+const PUBLIC_BOOKS_LIST = '/book/public_books'
+const PUBLIC_SONGS_LIST = '/book/public_songs'
 
 const LEFT_NAV_TOP = [
-    {name: 'home',   link: '/',         icon: <HomeIcon/>},
-    {name: 'public', link: PUBLIC_LIST, icon: <ExploreIcon/>}
+    {name: 'home',      link: '/',               icon: <HomeIcon/>},
+    {name: 'public',    link: PUBLIC_BOOKS_LIST, icon: <ExploreIcon/>},
+    {name: 'all_songs', link: PUBLIC_SONGS_LIST, icon: <ListIcon/>},
 ]
 const LEFT_NAV_BOT = [
     {name: 'settings', link: '/settings', icon: <SettingsIcon/>},
-    {name: 'feedback', link: '/feedback', icon: <FeedbackIcon/>}
+    {name: 'feedback', link: '/feedback', icon: <FeedbackIcon/>},
 ]
 
 const nav_list_item = ({name, link, icon}) => (
