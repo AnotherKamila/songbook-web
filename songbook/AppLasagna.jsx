@@ -43,7 +43,7 @@ export const middleware = compose(
         routerMiddleware(hashHistory),
         createLogger({collapsed: true})
     ),
-    persistState(['settings'])
+    persistState(['settings', 'current_book'])
 )
 
 ///// COMPONENT /////

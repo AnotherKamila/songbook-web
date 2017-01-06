@@ -19,8 +19,8 @@ const Stanza = ({stanza}) => {
 }
 
 function parse_text(text) {
-    // remove comments (marked by `//`) and excess whitespace
-    let cleaned = text.replace(/\/\/.*\n/gm, '').replace(/[\t ]+$/gm, '').replace(/\r?\n(\r?\n)+/gm, '\n\n')
+    // remove comments (marked by `#` at the beginning of line) and excess whitespace
+    let cleaned = text.replace(/^#[^\n]*\n/gm, '').replace(/[\t ]+$/gm, '').replace(/\r?\n(\r?\n)+/gm, '\n\n')
     // skip metadata section
     let meta_match = cleaned.split('\n\n', 1)[0].match(/^\w+\s*:\s*.*$/gm)
     if (meta_match) cleaned = cleaned.slice(cleaned.indexOf('\n\n')).trim()

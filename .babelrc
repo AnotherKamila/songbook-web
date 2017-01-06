@@ -4,5 +4,5 @@
         "stage-0",
         "react"
     ],
-    "plugins": ["material-ui"]
+    "plugins": ["material-ui", "lodash"]
 }

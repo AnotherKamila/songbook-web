@@ -1,6 +1,9 @@
 require('es6-promise').polyfill();
 path = require('path')
 
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+var webpack = require('webpack');
+
 module.exports = {
     devtool: "source-map",
     entry: './main.jsx',
@@ -22,10 +25,14 @@ module.exports = {
             {test: /\.sass$/, loaders: ["style", "css?sourceMap", "sass?indentedSyntax,sourceMap"]},
             {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'},
             {test: /\.svg$/, loader: 'svg-url-loader'},
-            {test: /\.ya?ml$/, loaders: ['json', 'yaml']}
-
+            {test: /\.ya?ml$/, loaders: ['json', 'yaml']},
         ]
     },
+    plugins: [
+        new LodashModuleReplacementPlugin,
+        new webpack.optimize.OccurrenceOrderPlugin,
+        new webpack.optimize.UglifyJsPlugin
+    ]
     devServer: {
         hot:    true,
         inline: true,

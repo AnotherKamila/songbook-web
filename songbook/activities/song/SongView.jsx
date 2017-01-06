@@ -1,8 +1,5 @@
 import React from 'react'
-// import {FormattedMessage} from 'react-intl'
-
-
-import {IconButton, List, ListItem, Paper, Subheader, makeSelectable} from 'material-ui'
+import {Subheader} from 'material-ui'
 import ActionFavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorderIcon from 'material-ui/svg-icons/action/favorite-border';
 
@@ -17,6 +14,7 @@ export const SongView = ({data, onSearch}) => (
                 <h1>{data.title}</h1>
                 <h2>{data.artist}</h2>
                 <p className='song-comment'>{data.comment}</p>
+                <p className='song-link'><a title='Link' href={data.link}>{data.link}</a></p>
             </header>
             <SongText song={data} />
         </div>

@@ -6,23 +6,26 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
+import {push as NAVIGATE_TO} from 'react-router-redux'
 
 import {with_data} from '../../utils/fetchdata'
-
-import {push as NAVIGATE_TO} from 'react-router-redux'
+import {SEARCH} from '../../search'
 import {BookView} from './BookView'
 
 
 const {Component, reducer} = with_data('book')
 export const book_reducer = reducer
-const BookFetcher = (props) => <Component url={'/book/'+props.params.id}
+const BookFetcher = (props) => <Component url={'/book/'+(props.params.id || props.current_book)}
                                           component={BookView}
                                           {...props} />
 
 export const Book = connect(
-    state => ({}),
+    state => ({
+        query: state.search,
+        current_book: state.current_book,
+    }),
     dispatch => ({
-        onNavRequest: (e, value) => dispatch(NAVIGATE_TO(value)),
-        onSearch: (e, value) => (console.log('[book] Search: ', value)),
+        onNavRequest: (value) => {dispatch(SEARCH('')); dispatch(NAVIGATE_TO(value))},
+        onSearch: (value) => dispatch(SEARCH(value)),
     })
 )(BookFetcher)

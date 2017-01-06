@@ -30,10 +30,11 @@ const search_style = {
     hint: {color: '#839496'},
     input: {color: '#fff'},
 }
-export const SearchAppBarView = ({onSearch, onDrawerOpenRequest}) => (
+export const SearchAppBarView = ({onSearch, query, onDrawerOpenRequest}) => (
     <AppBarView onDrawerOpenRequest={onDrawerOpenRequest}
                 title={<TextField hintText={<FormattedMessage id='app.search_field.hint'/>}
-                                     onChange={onSearch}
+                                     defaultValue={query}
+                                     onChange={(e, val) => onSearch(val)}
                                      fullWidth={true}
                                      hintStyle={search_style.hint}
                                      inputStyle={search_style.input}

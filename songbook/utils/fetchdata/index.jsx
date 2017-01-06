@@ -13,11 +13,11 @@ export function with_data(state_path) {
     const RECEIVE = createAction(ident+'/RECEIVE')
     const FAIL    = createAction(ident+'/FAIL')
 
-    let actions = {}
-    actions[ident+'/REQUEST'] = (state, action) => m(state, {is_fetching: true})
-    actions[ident+'/RECEIVE'] = (state, action) => m(state, {data: action.payload, error: null, is_fetching: false})
-    actions[ident+'/FAIL']    = (state, action) => m(state, {is_fetching: false, error: action.payload})
-    const reducer = handleActions(actions, {is_fetching: true, data: null, error: null})
+    let reducers = {}
+    reducers[ident+'/REQUEST'] = (state, action) => m(state, {is_fetching: true})
+    reducers[ident+'/RECEIVE'] = (state, action) => m(state, {data: action.payload, error: null, is_fetching: false})
+    reducers[ident+'/FAIL']    = (state, action) => m(state, {is_fetching: false, error: action.payload})
+    const reducer = handleActions(reducers, {is_fetching: true, data: null, error: null})
 
     function extract_state(state) {
         let mystate = state
