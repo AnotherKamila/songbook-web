@@ -19,6 +19,6 @@ export const Song = connect(
         return_to: state.current_book,
     }),
     dispatch => ({
-        onSearch: (value) => {dispatch(SEARCH(value)), dispatch(NAVIGATE_TO('/book/public_songs'))}, // TODO :D
+        onSearch: (value, return_to) => {dispatch(SEARCH(value)), dispatch(NAVIGATE_TO('/book/public_songs'))}, // TODO :D
     })
 )(SongFetcher)

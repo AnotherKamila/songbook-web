@@ -10,12 +10,13 @@ import {push as NAVIGATE_TO} from 'react-router-redux'
 
 import {with_data} from '../../utils/fetchdata'
 import {SEARCH} from '../../search'
+import {SET_CURRENT} from '../../current_book'
 import {BookView} from './BookView'
 
 
 const {Component, reducer} = with_data('book')
 export const book_reducer = reducer
-const BookFetcher = (props) => <Component url={'/book/'+(props.params.id || props.current_book)}
+const BookFetcher = (props) => <Component url={'/book/'+props.params.id}
                                           component={BookView}
                                           {...props} />
 
@@ -25,7 +26,13 @@ export const Book = connect(
         current_book: state.current_book,
     }),
     dispatch => ({
-        onNavRequest: (value) => {dispatch(SEARCH('')); dispatch(NAVIGATE_TO(value))},
+        on_new_props: (old_props, props) => {
+            if (props.current_book != props.url) dispatch(SET_CURRENT(props.url))
+        },
         onSearch: (value) => dispatch(SEARCH(value)),
+        onNavRequest: (value) => {
+            dispatch(NAVIGATE_TO(value))
+            dispatch(SEARCH('')) // clear search
+        },
     })
 )(BookFetcher)

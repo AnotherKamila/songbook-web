@@ -4,6 +4,7 @@ import {push as NAVIGATE_TO} from 'react-router-redux'
 
 import {ContainerView} from './ContainerView.jsx'
 import {AppBarView, SearchAppBarView} from './AppBarView.jsx'
+import {SET_CURRENT} from '../current_book'
 import {m} from '../utils'
 
 ///// actions /////

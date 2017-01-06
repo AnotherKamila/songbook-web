@@ -20,8 +20,7 @@ const fuse_options = {
     keys: [{name: 'title', weight: 0.7}, {name: 'artist', weight: 0.3}]
 }
 
-export const BookView = ({data, onNavRequest, onSearch, query, url}) => {
-    // console.log('search query:', query)
+export const BookView = ({data, onNavRequest, onSearch, query}) => {
     let items = data.contents
     let has_funnychars = (asciify(query) != query)
     if (query) {

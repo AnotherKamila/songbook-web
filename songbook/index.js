@@ -3,6 +3,7 @@ import {combineReducers, createStore} from 'redux'
 import {routerReducer} from 'react-router-redux'
 
 import {search_reducer} from './search'
+import {current_book_reducer} from './current_book'
 import {app_index} from './activities'
 import {AppLasagna, init, app_reducer, middleware} from './AppLasagna'
 
@@ -11,7 +12,7 @@ export function create_store() {
         app: app_reducer,
         routing: routerReducer,
         search: search_reducer,
-        // current_book: (state, _action) => (state || {})
+        current_book: current_book_reducer,
     }
     app_index.forEach(({name, reducer}) => {reducers[name] = reducer})
     let store = createStore(combineReducers(reducers), middleware)

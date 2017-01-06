@@ -7,7 +7,8 @@ export class FetchDataView extends React.Component {
     }
 
     componentWillReceiveProps(new_props) {
-        if (new_props.url != this.props.url) this.props.fetch(new_props.url)
+        if (new_props.url != this.props.url) new_props.fetch(new_props.url)
+        if (new_props.on_new_props) new_props.on_new_props(this.props, new_props)
     }
 
     render() {
