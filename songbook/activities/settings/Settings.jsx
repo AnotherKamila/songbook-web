@@ -4,7 +4,6 @@ import {FormattedMessage} from 'react-intl'
 import {Paper} from 'material-ui'
 
 import messages from '../../../translations/messages.yml'
-import {AppBar} from '../../container'
 
 import {CHANGE} from './actions.js'
 
@@ -45,7 +44,6 @@ SettingsForm.propTypes = {
 
 const SettingsScreen = props => (
     <div className="content-wrapper">
-        <AppBar title={<FormattedMessage id='settings.title' />} />
         <div className='content padded'>
             <Paper className='paper-responsive padded'>
                 <SettingsForm {...props} />

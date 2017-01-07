@@ -5,7 +5,6 @@ import {IconButton, List, ListItem, Paper, Subheader, makeSelectable} from 'mate
 import ActionFavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorderIcon from 'material-ui/svg-icons/action/favorite-border';
 
-import {SearchAppBar} from '../../container'
 import {asciify, m} from '../../utils'
 
 const SelectableList = makeSelectable(List);
@@ -20,7 +19,7 @@ const fuse_options = {
     keys: [{name: 'title', weight: 0.7}, {name: 'artist', weight: 0.3}]
 }
 
-export const BookView = ({data, onNavRequest, onSearch, query}) => {
+export const BookView = ({data, onNavRequest, query}) => {
     let items = data.contents
     let has_funnychars = (asciify(query) != query)
     if (query) {
@@ -32,7 +31,6 @@ export const BookView = ({data, onNavRequest, onSearch, query}) => {
     }
     return (
         <div className="content-wrapper">
-            <SearchAppBar query={query} onSearch={onSearch} />
             <div className='content padded'>
                 <Paper className="paper-responsive">
                     <SelectableList onChange={(e, val) => onNavRequest(val)}>

@@ -54,7 +54,7 @@ export const AppLasagna = ({store, routes, language}) => (
             <IntlProvider locale={language} messages={messages[language]}>
                 <Router history={syncHistoryWithStore(hashHistory, store)}>
                     <Route component={Container}>
-                        {routes.map(({name, path, component}) => <Route key={name} path={path} component={component}/>)}
+                        {routes.map(props => <Route key={props.name} path={props.path} component={props.component} {...props}/>)}
                     </Route>
                 </Router>
             </IntlProvider>

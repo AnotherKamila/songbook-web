@@ -31,7 +31,7 @@ module.exports = {
     plugins: [
         new LodashModuleReplacementPlugin,
         new webpack.optimize.OccurrenceOrderPlugin,
-        new webpack.optimize.UglifyJsPlugin
+        // new webpack.optimize.UglifyJsPlugin,
     ],
     devServer: {
         hot:    true,

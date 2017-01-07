@@ -1,12 +1,10 @@
 import React from 'react'
-import {AppBar} from '../../container'
-import {FormattedMessage} from 'react-intl'
+// import {FormattedMessage as T} from 'react-intl'
 // import {connect} from 'react-redux'
 
 export const Home = props => (
     <div className="content-wrapper">
-        <AppBar title={<FormattedMessage id='home.title' />} />
-        <div className='content padded song-view'>
+        <div className='content padded'>
             <span className='not-implemented'>TODO implement this :D</span>
         </div>
     </div>

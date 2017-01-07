@@ -28,7 +28,6 @@ export const Book = connect(
         on_new_props: (old_props, props) => {
             if (props.current_book != props.url) dispatch(SET_CURRENT_BOOK(props.url))
         },
-        onSearch: (value) => dispatch(SEARCH(value)),
         onNavRequest: (value) => {
             dispatch(NAVIGATE_TO(value))
             dispatch(SEARCH('')) // clear search

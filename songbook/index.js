@@ -3,7 +3,7 @@ import {combineReducers, createStore} from 'redux'
 import {routerReducer} from 'react-router-redux'
 
 import {search_reducer} from './search'
-import {app_index} from './activities'
+import {app_index} from './activities/index.jsx'
 import {AppLasagna, init, app_reducer, middleware} from './AppLasagna'
 
 export function create_store() {

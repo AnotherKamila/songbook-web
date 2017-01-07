@@ -1,6 +1,7 @@
 import React from 'react'
 import {FormattedMessage} from 'react-intl'
 
+import {AppBarView} from './AppBarView.jsx'
 import {AppDrawer} from './AppDrawer'
 
 import '../songbook.sass'
@@ -8,9 +9,12 @@ import '../songbook.sass'
 export const ContainerView = (props) => {
     return (
         <div className='songbook-container'>
+            <AppBarView onDrawerOpenRequest={props.onDrawerOpenRequest}
+                        content={props.children.props.route.appbar_content}
+                        title_id={props.children.props.route.appbar_title_id} />
             <AppDrawer open={props.drawer_open}
-                       onOpenRequestChange={props.onDrawerOpenRequestChange}
-                       onNavRequestChange={props.onDrawerNavRequestChange}
+                       onOpenRequest={props.onDrawerOpenRequest}
+                       onNavRequest={props.onDrawerNavRequest}
                        location={props.location}
                        router={props.router}/>
                 {props.children}
@@ -19,6 +23,6 @@ export const ContainerView = (props) => {
 }
 ContainerView.propTypes = {
     children: React.PropTypes.node,
-    onDrawerOpenRequestChange: React.PropTypes.func.isRequired,
-    onDrawerNavRequestChange: React.PropTypes.func.isRequired,
+    onDrawerOpenRequest: React.PropTypes.func.isRequired,
+    onDrawerNavRequest: React.PropTypes.func.isRequired,
 }

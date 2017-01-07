@@ -2,9 +2,9 @@ import {createAction, handleActions} from 'redux-actions'
 import {connect} from 'react-redux'
 import {push as NAVIGATE_TO} from 'react-router-redux'
 
-import {ContainerView} from './ContainerView.jsx'
-import {AppBarView, SearchAppBarView} from './AppBarView.jsx'
 import {m} from '../utils'
+import {SEARCH} from '../search'
+import {ContainerView} from './ContainerView.jsx'
 
 ///// actions /////
 
@@ -28,25 +28,11 @@ export const Container = connect(
         drawer_open: state.app.container.drawer_open,
     }),
     dispatch => ({
-        onDrawerOpenRequestChange: (open) => dispatch(DRAWER_OPEN(open)),
-        onDrawerNavRequestChange: (e, value) => {
+        onDrawerOpenRequest: (open) => dispatch(DRAWER_OPEN(open)),
+        onDrawerNavRequest: (e, value) => {
+            dispatch(SEARCH('')) // clear search
             dispatch(NAVIGATE_TO(value))
             dispatch(DRAWER_OPEN(false))
         },
     })
 )(ContainerView)
-
-export const AppBar = connect(
-    state => ({}),
-    dispatch => ({
-        onDrawerOpenRequest: (open) => dispatch(DRAWER_OPEN(open)),
-    })
-)(AppBarView)
-
-export const SearchAppBar = connect(
-    state => ({}),
-    dispatch => ({
-        onDrawerOpenRequest: (open) => dispatch(DRAWER_OPEN(open)),
-    })
-)(SearchAppBarView)
-

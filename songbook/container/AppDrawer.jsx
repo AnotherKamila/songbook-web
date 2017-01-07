@@ -37,10 +37,10 @@ const SelectableList = makeSelectable(List);
 export const AppDrawer = (props) => (
     <Drawer docked={false}
             open={props.open}
-            onRequestChange={props.onOpenRequestChange}
+            onRequestChange={props.onOpenRequest}
             className="app-drawer">
 
-        <SelectableList value={props.location.pathname} onChange={props.onNavRequestChange}>
+        <SelectableList value={props.location.pathname} onChange={props.onNavRequest}>
             {LEFT_NAV_TOP.map(item => nav_list_item(item))}
             <Divider />
             {LEFT_NAV_BOT.map(item => nav_list_item(item))}
@@ -49,6 +49,6 @@ export const AppDrawer = (props) => (
 )
 AppDrawer.propTypes = {
     open: React.PropTypes.bool.isRequired,
-    onOpenRequestChange: React.PropTypes.func,
-    onNavRequestChange: React.PropTypes.func,
+    onOpenRequest: React.PropTypes.func.isRequired,
+    onNavRequest: React.PropTypes.func.isRequired,
 }
