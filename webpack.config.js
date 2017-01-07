@@ -32,7 +32,7 @@ module.exports = {
         new LodashModuleReplacementPlugin,
         new webpack.optimize.OccurrenceOrderPlugin,
         new webpack.optimize.UglifyJsPlugin
-    ]
+    ],
     devServer: {
         hot:    true,
         inline: true,
