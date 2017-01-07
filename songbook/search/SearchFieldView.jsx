@@ -12,7 +12,7 @@ const search_style = {
 
 export const SearchFieldView = ({query, on_search, current_book}) => (
 <TextField hintText={<T id='app.search_field.hint'/>}
-           defaultValue={query}
+           value={query}
            onChange={(e, val) => on_search(val, current_book)}
            fullWidth={true}
            hintStyle={search_style.hint}

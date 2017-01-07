@@ -21,7 +21,7 @@ export const SearchField = connect(
     dispatch => ({
         on_search: (query, navigate_to) => {
             dispatch(SEARCH(query))
-            dispatch(NAVIGATE_TO(navigate_to))
+            if (navigate_to) dispatch(NAVIGATE_TO(navigate_to))
         },
     })
 )(SearchFieldView)
