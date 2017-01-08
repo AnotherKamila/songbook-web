@@ -17,6 +17,9 @@ sk:
 
   book.top-message: ♥ pridá do Môjho spevníka
 
+  song.transpose: 'Transpozícia: {n}'
+  song.semitones: '{abs, plural, =0 {pôvodná} one {{sign}{n} poltón} few {{sign}{n} poltóny} other {{sign}{n} poltónov}}'
+
 en:
   app.title: Songbook
   app.search_field.hint: Search for a song
@@ -35,3 +38,6 @@ en:
   intro.title: Welcome!
 
   book.top-message: ♥ to include in My Songbook
+
+  song.transpose: 'Transpose: {n}'
+  song.semitones: '{abs, plural, =0 {Original} one {{sign}{n} semitone} other {{sign}{n} semitones}}'

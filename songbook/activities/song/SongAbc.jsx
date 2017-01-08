@@ -5,15 +5,24 @@
 
 import React from 'react'
 import {DropDownMenu, MenuItem} from 'material-ui'
+import {FormattedMessage as T} from 'react-intl'
 import Measure from 'react-measure'
 import _ from 'lodash'
 
 import './song.sass'
 
-const TONES = _.range(-12, 13) // half-open :D
-const Transpose = ({value, onChange}) => (
+const TONES = _.range(12, -13) // half-open :D
+const Transpose = ({value, onChange, intl}) => (
     <DropDownMenu value={value} onChange={(e, i, val) => onChange(val)} maxHeight={200}>
-        {TONES.map(i => <MenuItem key={i} value={i} label={'Transpose: '+i} primaryText={i ? i+' semitones' : 'None'} />)}
+        {TONES.map(i => <MenuItem value={i}
+                                  label={<T id='song.transpose' values={{n: i}}/>}
+                                  primaryText={<T id='song.semitones' values={{
+                                      n: i,
+                                      sign: i>0 ? '+' : '',
+                                      abs: Math.abs(i)
+                                  }}/>}
+                                  key={i} />
+        )}
     </DropDownMenu>
 )
 
