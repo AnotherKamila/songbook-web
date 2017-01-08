@@ -1,6 +1,6 @@
 import React from 'react'
 import Fuse from 'fuse.js'
-import {FormattedMessage} from 'react-intl'
+import {FormattedMessage as T} from 'react-intl'
 import {IconButton, List, ListItem, Paper, Subheader, makeSelectable} from 'material-ui'
 import ActionFavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorderIcon from 'material-ui/svg-icons/action/favorite-border';
@@ -71,8 +71,7 @@ export class BookView extends React.Component {
                 <div className='content padded'>
                     <Paper className="paper-responsive">
                         <SelectableList onChange={(e, val) => this.props.onNavRequest(val)}>
-                            <Subheader><FormattedMessage id='book.top-message' /></Subheader>
-                            <Subheader className="not-implemented">Actually, it is not implemented yet.</Subheader>
+                            <Subheader>{this.props.data.title}</Subheader>
                             {this.state.items.map(({error, title, artist, ref}) => (
                                 <ListItem key={ref}
                                           primaryText={title ? title : ref}
@@ -88,7 +87,7 @@ export class BookView extends React.Component {
     }
 }
 BookView.propTypes = {
-    onNavRequest: React.PropTypes.func.isRequired,
     data:         React.PropTypes.object.isRequired,
     query:        React.PropTypes.string,
+    onNavRequest: React.PropTypes.func.isRequired,
 }
