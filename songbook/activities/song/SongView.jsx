@@ -4,6 +4,7 @@ import ActionFavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorderIcon from 'material-ui/svg-icons/action/favorite-border';
 
 import {SongText} from './SongText.jsx'
+import {SongAbc}  from './SongAbc.jsx'
 
 export const SongView = ({data}) => (
     <div className="content-wrapper">
@@ -14,6 +15,7 @@ export const SongView = ({data}) => (
                 <p className='song-comment'>{data.comment}</p>
                 <p className='song-link'><a title='Link' href={data.link}>{data.link}</a></p>
             </header>
+            {data.abc  ? <SongAbc  song={data.abc}  /> : null}
             {data.text ? <SongText song={data.text} /> : null}
         </div>
     </div>
