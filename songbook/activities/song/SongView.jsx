@@ -14,7 +14,7 @@ export const SongView = ({data}) => (
                 <p className='song-comment'>{data.comment}</p>
                 <p className='song-link'><a title='Link' href={data.link}>{data.link}</a></p>
             </header>
-            <SongText song={data} />
+            {data.text ? <SongText song={data.text} /> : null}
         </div>
     </div>
 )

@@ -31,10 +31,6 @@ function parse_text(text) {
 
 export const SongText = ({song}) => (
     <div className="song-text">
-        {parse_text(song.text)}
+        {parse_text(song)}
     </div>
-)
-
-export const SongSheet = ({song}) => (
-    <span class="not-implemented">Not implemented yet</span>
 )

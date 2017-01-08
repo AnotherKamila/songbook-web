@@ -5,4 +5,6 @@ const get_default_language = () => {
     return 'en'
 }
 
-export const default_state = {language: get_default_language()}
+export const default_state = {
+    language: get_default_language(),
+}
