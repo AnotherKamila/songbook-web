@@ -11,6 +11,8 @@ const MIN_MATCH_LEN = 1
 
 const SelectableList = makeSelectable(List)
 
+const has_funnychars = s => (asciify(s) != s.toLowerCase())
+
 export class BookView extends React.Component {
     constructor(props) {
         super(props);
@@ -38,16 +40,17 @@ export class BookView extends React.Component {
         }
         if (props.query.length >= MIN_MATCH_LEN) {
             let fuse = next_state.fuse || this.state.fuse
-            next_state.items = fuse.search(props.query)
+            let q = has_funnychars(props.query) ? props.query : props.query.toLowerCase()
+            next_state.items = fuse.search(q)
         } else {
             next_state.items = props.data.contents
         }
         return m(this.state || {}, next_state)
     }
 
+
     fuse_getFn = (obj, path) => {
-        let has_funnychars = (asciify(this.props.query) != this.props.query)
-        return has_funnychars ? obj[path] : asciify(obj[path])
+        return has_funnychars(this.props.query) ? obj[path] : asciify(obj[path])
     }
 
     fuse_new = (items) => (new Fuse(items, {
