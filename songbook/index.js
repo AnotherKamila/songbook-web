@@ -4,11 +4,10 @@ import {routerReducer} from 'react-router-redux'
 
 import {search_reducer} from './search'
 import {app_index} from './activities/index.jsx'
-import {AppLasagna, init, app_reducer, middleware} from './AppLasagna'
+import {AppLasagna, init, middleware} from './AppLasagna'
 
 export function create_store() {
     let reducers = {
-        app: app_reducer,
         routing: routerReducer,
         search: search_reducer,
     }

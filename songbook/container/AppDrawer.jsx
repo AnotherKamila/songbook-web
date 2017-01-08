@@ -40,7 +40,8 @@ export const AppDrawer = (props) => (
             onRequestChange={props.onOpenRequest}
             className="app-drawer">
 
-        <SelectableList value={props.location.pathname} onChange={props.onNavRequest}>
+        <SelectableList onChange={(e, val) => {props.onOpenRequest(false); props.onNavRequest(val)}}
+                        value={props.location.pathname}>
             {LEFT_NAV_TOP.map(item => nav_list_item(item))}
             <Divider />
             {LEFT_NAV_BOT.map(item => nav_list_item(item))}

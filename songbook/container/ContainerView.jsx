@@ -6,23 +6,33 @@ import {AppDrawer} from './AppDrawer'
 
 import '../songbook.sass'
 
-export const ContainerView = (props) => {
-    return (
-        <div className='songbook-container'>
-            <AppBarView onDrawerOpenRequest={props.onDrawerOpenRequest}
-                        content={props.children.props.route.appbar_content}
-                        title_id={props.children.props.route.appbar_title_id} />
-            <AppDrawer open={props.drawer_open}
-                       onOpenRequest={props.onDrawerOpenRequest}
-                       onNavRequest={props.onDrawerNavRequest}
-                       location={props.location}
-                       router={props.router}/>
-                {props.children}
-        </div>
-    )
+export class ContainerView extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {drawer_open: false}
+    }
+
+    drawer_set_open = (open) => {
+        this.setState({drawer_open: open})
+    }
+
+    render() {
+        return (
+            <div className='songbook-container'>
+                <AppBarView onDrawerOpenRequest={this.drawer_set_open}
+                            content={this.props.children.props.route.appbar_content}
+                            title_id={this.props.children.props.route.appbar_title_id} />
+                <AppDrawer open={this.state.drawer_open}
+                           onOpenRequest={this.drawer_set_open}
+                           onNavRequest={this.props.onDrawerNavRequest}
+                           location={this.props.location}
+                           router={this.props.router}/>
+                    {this.props.children}
+            </div>
+        )
+    }
 }
 ContainerView.propTypes = {
     children: React.PropTypes.node,
-    onDrawerOpenRequest: React.PropTypes.func.isRequired,
     onDrawerNavRequest: React.PropTypes.func.isRequired,
 }

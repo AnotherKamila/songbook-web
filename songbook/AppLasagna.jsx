@@ -29,12 +29,6 @@ export const init = (store) => {
     addLocaleData([...en, ...sk])
 }
 
-///// STATE /////
-
-export const app_reducer = combineReducers({
-    'container': container_reducer,
-})
-
 ///// MIDDLEWARE /////
 
 export const middleware = compose(
