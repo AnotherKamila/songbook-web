@@ -19,7 +19,7 @@ export const SearchField = connect(
         current_book: state.search.current_book,
     }),
     dispatch => ({
-        on_search: (query, navigate_to) => {
+        onSearch: (query, navigate_to) => {
             dispatch(SEARCH(query))
             if (navigate_to) dispatch(NAVIGATE_TO(navigate_to))
         },

@@ -15,8 +15,11 @@ export const SongView = ({data}) => (
                 <p className='song-comment'>{data.comment}</p>
                 <p className='song-link'><a title='Link' href={data.link}>{data.link}</a></p>
             </header>
-            {data.abc  ? <SongAbc  song={data.abc}  /> : null}
-            {data.text ? <SongText song={data.text} /> : null}
+            {data.abc  ? <SongAbc  abc={data.abc}   /> : null}
+            {data.text ? <SongText text={data.text} /> : null}
         </div>
     </div>
 )
+SongView.propTypes = {
+    data: React.PropTypes.object.isRequired,
+}

@@ -21,16 +21,16 @@ export class BookView extends React.Component {
 
     componentWillReceiveProps(next_props) {
         let next_state = this.next_state_from_props(next_props)
-        this.nav_if_single_item(next_state.items)
+        if (next_props.query) this.nav_if_single_item(next_state.items)
         this.setState(this.next_state_from_props(next_props))
     }
 
     componentDidMount() {
-        this.nav_if_single_item(this.state.items)
+        if (this.props.query) this.nav_if_single_item(this.state.items)
     }
 
     nav_if_single_item = (items) => {
-        if (items.length == 1) this.props.on_nav_request(items[0].ref)
+        if (items.length == 1) this.props.onNavRequest(items[0].ref)
     }
 
     next_state_from_props = (props) => {
@@ -70,7 +70,7 @@ export class BookView extends React.Component {
             <div className="content-wrapper">
                 <div className='content padded'>
                     <Paper className="paper-responsive">
-                        <SelectableList onChange={(e, val) => this.props.on_nav_request(val)}>
+                        <SelectableList onChange={(e, val) => this.props.onNavRequest(val)}>
                             <Subheader><FormattedMessage id='book.top-message' /></Subheader>
                             <Subheader className="not-implemented">Actually, it is not implemented yet.</Subheader>
                             {this.state.items.map(({error, title, artist, ref}) => (
@@ -86,4 +86,9 @@ export class BookView extends React.Component {
             </div>
         )
     }
+}
+BookView.propTypes = {
+    onNavRequest: React.PropTypes.func.isRequired,
+    data:         React.PropTypes.object.isRequired,
+    query:        React.PropTypes.string,
 }

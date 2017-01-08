@@ -10,10 +10,10 @@ const search_style = {
     input: {color: '#fff'},
 }
 
-export const SearchFieldView = ({query, on_search, current_book}) => (
+export const SearchFieldView = ({query, onSearch, current_book}) => (
 <TextField hintText={<T id='app.search_field.hint'/>}
            value={query}
-           onChange={(e, val) => on_search(val, current_book)}
+           onChange={(e, val) => onSearch(val, current_book)}
            fullWidth={true}
            hintStyle={search_style.hint}
            inputStyle={search_style.input}
@@ -21,4 +21,9 @@ export const SearchFieldView = ({query, on_search, current_book}) => (
            underlineFocusStyle={search_style.line_focused}
            style={{position: 'relative', top: '-6px'}} />
 )
+SearchFieldView.propTypes = {
+    query: React.PropTypes.string,
+    onSearch: React.PropTypes.func.isRequired,
+    current_book: React.PropTypes.string.isRequired,
+}
 SearchFieldView.muiName = 'TextField'

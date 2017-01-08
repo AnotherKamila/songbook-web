@@ -29,8 +29,11 @@ function parse_text(text) {
     return stanzas.map((s, i) => <Stanza stanza={s} key={i}/>)
 }
 
-export const SongText = ({song}) => (
+export const SongText = ({text}) => (
     <div className="song-text">
-        {parse_text(song)}
+        {parse_text(text)}
     </div>
 )
+SongText.propTypes = {
+    text: React.PropTypes.string.isRequired,
+}

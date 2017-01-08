@@ -22,4 +22,9 @@ export const AppBarView = ({content, title_id, onDrawerOpenRequest}) => (
             onLeftIconButtonTouchTap={()=>onDrawerOpenRequest(true)}
             style={{position: 'fixed', top: 0}} />
 )
+AppBarView.propTypes = {
+    content:             React.PropTypes.element,
+    title_id:            React.PropTypes.string,
+    onDrawerOpenRequest: React.PropTypes.func.isRequired,
+}
 AppBarView.muiName = 'AppBar'

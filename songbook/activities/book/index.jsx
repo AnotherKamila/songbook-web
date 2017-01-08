@@ -22,13 +22,9 @@ const BookFetcher = (props) => <Component url={'/book/'+props.params.id}
 export const Book = connect(
     state => ({
         query: state.search.query,
-        current_book: state.search.current_book,
     }),
     dispatch => ({
-        on_new_props: (old_props, props) => {
-            if (props.current_book != props.url) dispatch(SET_CURRENT_BOOK(props.url))
-        },
-        on_nav_request: (value) => {
+        onNavRequest: (value) => {
             dispatch(NAVIGATE_TO(value))
             dispatch(SEARCH('')) // clear search
         },

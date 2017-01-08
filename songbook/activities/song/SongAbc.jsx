@@ -12,7 +12,7 @@ import _ from 'lodash'
 import './song.sass'
 
 const TONES = _.range(12, -13) // half-open :D
-const Transpose = ({value, onChange, intl}) => (
+const Transpose = ({value, onChange}) => (
     <DropDownMenu value={value} onChange={(e, i, val) => onChange(val)} maxHeight={200}>
         {TONES.map(i => <MenuItem value={i}
                                   label={<T id='song.transpose' values={{n: i}}/>}
@@ -25,6 +25,10 @@ const Transpose = ({value, onChange, intl}) => (
         )}
     </DropDownMenu>
 )
+Transpose.propTypes = {
+    value: React.PropTypes.number,
+    onChange: React.PropTypes.func,
+}
 
 export class SongAbc extends React.Component {
     constructor(props) {
@@ -38,7 +42,7 @@ export class SongAbc extends React.Component {
         this.setState({svg: this.svg})
     }
 
-    rerender = () => {
+    render_svg = () => {
         if (!this.state.width) return; // ...and call me in a while
         this.svg = ''
         let transpose = '%%transpose '+this.state.transpose // WHOA! :D
@@ -51,13 +55,13 @@ export class SongAbc extends React.Component {
             img_out: this.add_svg_chunk,
             errmsg: console.warn, // TODO
             read_file: fname => console.warn('Includes not supported (requested '+fname+')'), // TODO
-        }).tosvg('[abc]', [transpose, size, this.props.song].join('\n'))
+        }).tosvg('[abc]', [transpose, size, this.props.abc].join('\n'))
     }
 
     componentDidUpdate(prev_props, prev_state) {
         if (prev_state.width     != this.state.width ||
             prev_state.transpose != this.state.transpose ||
-            prev_props.song      != this.props.song) this.rerender()
+            prev_props.abc       != this.props.abc) this.render_svg()
     }
 
     render() {
@@ -82,4 +86,6 @@ export class SongAbc extends React.Component {
         )
     }
 }
-
+SongAbc.propTypes = {
+    abc: React.PropTypes.string.isRequired,
+}

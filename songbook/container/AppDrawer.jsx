@@ -31,6 +31,11 @@ const nav_list_item = ({name, link, icon}) => (
                   primaryText={<FormattedMessage id={name+'.title'} />}
                   value={link} />
 )
+nav_list_item.propTypes = {
+    name: React.PropTypes.string.isRequired,
+    link: React.PropTypes.string.isRequired,
+    icon: React.PropTypes.element,
+}
 
 const SelectableList = makeSelectable(List);
 
