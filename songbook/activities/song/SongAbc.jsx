@@ -4,37 +4,15 @@
 // and therefore webpack completely refuses to bundle it. Argh.
 
 import React from 'react'
-import {DropDownMenu, MenuItem} from 'material-ui'
-import {FormattedMessage as T} from 'react-intl'
 import Measure from 'react-measure'
-import _ from 'lodash'
 
 import './song.sass'
-
-const TONES = _.range(12, -13) // half-open :D
-const Transpose = ({value, onChange}) => (
-    <DropDownMenu value={value} onChange={(e, i, val) => onChange(val)} maxHeight={200}>
-        {TONES.map(i => <MenuItem value={i}
-                                  label={<T id='song.transpose' values={{n: i}}/>}
-                                  primaryText={<T id='song.semitones' values={{
-                                      n: i,
-                                      sign: i>0 ? '+' : '',
-                                      abs: Math.abs(i)
-                                  }}/>}
-                                  key={i} />
-        )}
-    </DropDownMenu>
-)
-Transpose.propTypes = {
-    value: React.PropTypes.number,
-    onChange: React.PropTypes.func,
-}
 
 export class SongAbc extends React.Component {
     constructor(props) {
         super(props)
         this.svg = '' // NOT using state here, because it was eating some calls to setState...
-        this.state = {transpose: 0}
+        this.state = {}
     }
 
     add_svg_chunk = chunk => {
@@ -45,7 +23,7 @@ export class SongAbc extends React.Component {
     render_svg = () => {
         if (!this.state.width) return; // ...and call me in a while
         this.svg = ''
-        let transpose = '%%transpose '+this.state.transpose // WHOA! :D
+        let transpose = '%%transpose '+this.props.transpose // WHOA! :D
         let size=[ // why not :D
             '%%pagewidth '+(this.state.width),
             '%%leftmargin 0',
@@ -60,7 +38,7 @@ export class SongAbc extends React.Component {
 
     componentDidUpdate(prev_props, prev_state) {
         if (prev_state.width     != this.state.width ||
-            prev_state.transpose != this.state.transpose ||
+            prev_props.transpose != this.props.transpose ||
             prev_props.abc       != this.props.abc) this.render_svg()
     }
 
@@ -71,10 +49,6 @@ export class SongAbc extends React.Component {
         } else {
             div = (
                 <div className="song-abc">
-                    <div className='song-transpose'>
-                        <Transpose value={this.state.transpose}
-                                         onChange={(val) => this.setState({transpose: val})} />
-                    </div>
                     <div dangerouslySetInnerHTML={{__html: this.state.svg}} />
                 </div>
             )
@@ -88,4 +62,5 @@ export class SongAbc extends React.Component {
 }
 SongAbc.propTypes = {
     abc: React.PropTypes.string.isRequired,
+    transpose: React.PropTypes.number.isRequired,
 }
