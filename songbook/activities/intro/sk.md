@@ -20,7 +20,7 @@ Hlavné užitočné vlastnosti
 - vyhľadávanie vnútri pod-spevníkov
 - synchronizovanie zobrazenia na viacerých zariadeniach (keď hrá/spieva veľa ľudí naraz, manuálne synchronizovať, kde sme, je otrava)
 
-<sup>*</sup> Ak chcete, aby som pridala pieseň, pošlite mi noty alebo text s akordami v nejakom rozumnom formáte (najlepšie [.abc](http://abcnotation.com/) pre noty alebo .txt s vyznačenými akordami pre text, ale viem všeličo skonvertovať).
+<sup>*</sup> Ak chcete, aby som pridala pieseň už teraz, pošlite mi noty alebo text s akordami v nejakom rozumnom formáte (najlepšie [.abc](http://abcnotation.com/) pre noty alebo [.txt s vyznačenými akordami](https://github.com/AnotherKamila/songbook-web/blob/master/example-song.txt) pre text, ale viem všeličo skonvertovať).
 
 Kedy pridáš *X*?
 ----------------

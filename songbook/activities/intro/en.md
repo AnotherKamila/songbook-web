@@ -20,7 +20,7 @@ Main Features
 - searching inside sub-songbooks
 - syncing view across devices (when there is a lot of people, manually syncing several devices to show the same thing becomes annoying)
 
-<sup>*</sup> If you want me to add a song, send me the sheet music or the text+chords in some reasonable format (ideally [.abc](http://abcnotation.com/) for sheet music or .txt with marked chords for text, but I can convert from some other formats, too).
+<sup>*</sup> If you want me to add a song now, send me the sheet music or the text+chords in some reasonable format (ideally [.abc](http://abcnotation.com/) for sheet music or [.txt with marked chords](https://github.com/AnotherKamila/songbook-web/blob/master/example-song.txt) for text, but I can convert from some other formats, too).
 
 When will you add support for *X*?
 ----------------------------------
