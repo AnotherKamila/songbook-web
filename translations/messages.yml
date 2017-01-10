@@ -20,6 +20,11 @@ sk:
   song.transpose: 'Transpozícia: {n}'
   song.semitones: '{abs, plural, =0 {pôvodná} one {{sign}{n} poltón} few {{sign}{n} poltóny} other {{sign}{n} poltónov}}'
 
+  fallback.title: Nenájdené
+  fallback.message: 'Adresa "{url}" neukazuje na žiadnu súčasť aplikácie.'
+
+  not_implemented: Funkcionalita ešte nie je implementovaná.
+
 en:
   app.title: Songbook
   app.search_field.hint: Search for a song
@@ -41,3 +46,8 @@ en:
 
   song.transpose: 'Transpose: {n}'
   song.semitones: '{abs, plural, =0 {Original} one {{sign}{n} semitone} other {{sign}{n} semitones}}'
+
+  fallback.title: Not Found
+  fallback.message: 'The address "{url}" does not point to anything in this application.'
+
+  not_implemented: This functionality is not implemented yet.

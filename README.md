@@ -32,7 +32,7 @@ Main Features
 
 - adding your songs & creating your own songbooks :D
 - offline usage
-- recursive search -- 
+- recursive search -- searching inside sub-songbooks
 - syncing view across devices (as when there is a lot of people, manually syncing several computers to show the same thing becomes annoying)
 
 ### When will you add support for *X*?
