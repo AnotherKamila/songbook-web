@@ -1,43 +1,51 @@
 Songbook
 ========
 
-[![Heroku status](https://heroku-badge.herokuapp.com/?app=spevnik47)](https://spevnik47-web.herokuapp.com/)
+<!-- [![Heroku status](https://heroku-badge.herokuapp.com/?app=spevnik47)](https://spevnik47-web.herokuapp.com/) -->
 [![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://david-dm.org/anotherkamila/songbook-web)
-[![Floobits Status](https://floobits.com/kamila/songbook.svg)](https://floobits.com/kamila/songbook/redirect)
+<!-- [![Floobits Status](https://floobits.com/kamila/songbook.svg)](https://floobits.com/kamila/songbook/redirect) -->
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/anotherkamila/songbook-web/issues)
 
-Yet another iteration of my HTML5 songbook attempt. Wheeeee!
-------------------------------------------------------------
 
-This thing might one day become a neat, touch-friendly, and human-friendly songbook/sheet music organizer written as an HTML5 offline app.
+Awesome Songbook Web App. Wheeeee!
+----------------------------------
 
-The Idea
---------
+A neat, mobile-friendly, and human-friendly songbook + sheet music organizer written as an offline web app.
 
-- it should have an almost paper-like feeling, at least in being minimal - no distractions
-- it should make use of the fact that it is not paper (e.g. powerful search)
-- it should be easy to use and convenient for both me and a less computer-savvy person
-- it should work offline
-- it should work across all devices with modern browsers
+Main Features
+-------------
 
-Notable planned features
-------------------------
+- almost paper-like feeling, in being minimal - no distractions
+- makes use of the fact that it is not paper (e.g. built-in transposition or powerful search)
+- easy to use and convenient for both me and a less computer-savvy person
+- works offline
+- works across all devices with modern browsers
 
-- awesome search
+### Actually implemented main features
+
+- chords and sheet music display
+- transposing (both chords and sheet music)
+- awesome search (work in progress, but it is already quite good)
 - nice URLs
-- “playlists”
+
+### Notably not-implemented-but-planned features:
+
+- adding your songs & creating your own songbooks :D
 - offline usage
-- transposing chords
-- support for displaying other things besides lyrics with chords (notes, tabs, etc.)
-- support for more/arbitrary metadata (via plugins)
+- recursive search -- 
 - syncing view across devices (as when there is a lot of people, manually syncing several computers to show the same thing becomes annoying)
-- easily extensible
+
+### When will you add support for *X*?
+
+Not before my exam period is over (i.e. middle of February). I should have some time to work on this afterwards.
+
+You can speed up the process by submitting pull requests ;-)
 
 Using...
 --------
 
 - [React](https://facebook.github.io/react)
 - [webpack](http://webpack.github.io/)
-- running on [Heroku](https://heroku.com/)
 
 Development Quick Start
 -----------------------
@@ -46,6 +54,5 @@ Note: This is the web front-end. The backend/API is [AnotherKamila/songbook-api]
 
 - requires [node.js](https://nodejs.org/) and npm
 - install dependencies: `npm install`
-- start prod server: `node server` (or `heroku local`)
-- dev server: run `./devserver.sh`, open [localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
-- It will attempt to connect to the backend at the URL written in `public/API_URL.conf`. If using the prod server, you should instead set the `API_URL` environment variable.
+- dev server: run `npm start`, open [localhost:8000/](http://localhost:8000/) and enjoy continuous rebuild-and-automatic-reload-with-sourcemaps-and-everything!
+- It will attempt to connect to the backend at the URL written in `config.js`.
