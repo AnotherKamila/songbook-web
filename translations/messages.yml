@@ -8,7 +8,7 @@ sk:
   all_songs.title: Všetky verejné piesne
 
   settings.title: Nastavenia
-  settings.label.lang: Jazyk
+  settings.label.lang: 'Jazyk: {lang}'
 
   feedback.title: Napíšte mi
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfIzvHwJlmVMua0Zz9WFpv4jGrHRDzZNUvfUBui6hdJn8qByQ/viewform?embedded=true&hl=sk
@@ -35,7 +35,7 @@ en:
   all_songs.title: All public songs
 
   settings.title: Settings
-  settings.label.lang: Language
+  settings.label.lang: 'Language: {lang}'
 
   feedback.title: Feedback
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfywW3efhyw8-Wzrdz7BYLWWQQ9uEyrDoZJaN5rJbiTtk3C4Q/viewform?embedded=true
