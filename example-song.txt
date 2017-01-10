@@ -1,0 +1,62 @@
+Title: Write in C
+Artist: ľudová
+
+When I <<C>>find my code in <<G>>tons of trouble,
+<<Ami>>Friends and colleagues <<F>>come to me,
+<<C>>Speaking words of <<G>>wisdom:
+"Write in <<F>>C."<<C>> <<Dmi>> <<C>>
+
+<<C>>As the deadline <<G>>fast approaches,
+<<Ami>>And bugs are all <<F>>I can see,
+<<C>>Somewhere, someone <<G>>whispers:
+"Write in <<F>>C."<<C>> <<Dmi>> <<C>>
+
+Write in <<Ami>>C, Write in <<G>>C,
+Write in <<F>>C, Write in <<C>>C.
+<<C>>LISP is dead and <<G>>buried,
+Write in <<F>>C.<<C>> <<Dmi>> <<C>>
+
+I used to write a lot of FORTRAN,
+For science it worked flawlessly.
+Try using it for graphics!
+Write in C.
+
+If you've just spent nearly 30 hours
+Debugging some assembly,
+Soon you'll be glad to
+Write in C.
+
+Write in C, Write in C,
+Write in C, Write in C.
+Only wimps use BASIC.
+Write in C.
+
+Write in C, Write in C,
+Write in C, oh,  Write in C.
+Pascal won't quite cut it.
+Write in C.
+
+Write in C, Write in C,
+Write in C, Write in C.
+Don't even mention COBOL.
+ Write in C.
+
+And when the screen is fuzzy,
+And the editor is bugging me.
+I'm sick of ones and zeroes.
+Write in C.
+
+A thousand people swear that T.P.
+Seven is the one for me.
+I hate the word PROCEDURE,
+Write in C.
+
+Write in C, Write in C,
+Write in C, Write in C.
+PL1 is 80's,
+Write in C.
+
+Write in C, Write in C,
+Write in C, Write in C.
+The government loves ADA,
+Write in C.
