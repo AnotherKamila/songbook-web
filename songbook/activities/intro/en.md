@@ -27,6 +27,8 @@ When will you add support for *X*?
 
 Not before my exam period is over (i.e. middle of February). I should have some time to work on this afterwards.
 
+[Here is my planned work -- vote to influence it!](https://trello.com/b/STftFyBr/songbook?menu=filter&filter=label:user-visible)
+
 You can speed up the process by submitting pull requests ;-) (The code is [on GitHub](https://github.com/AnotherKamila/songbook-web).)
 
 Feedback is welcome!

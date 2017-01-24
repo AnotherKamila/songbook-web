@@ -27,6 +27,8 @@ Kedy pridáš *X*?
 
 Nie skôr ako po mojom skúškovom období (t.j. v polovici februára). Potom by som mala opäť mať trochu času niečo spraviť.
 
+[Tu je, čo plánujem robiť -- hlasujte, ak to chcete zmeniť!](https://trello.com/b/STftFyBr/songbook?menu=filter&filter=label:user-visible) (len v angličtine)
+
 Proces môžete urýchliť pomocou ;-) (Zdrojový kód je [na GitHub-e](https://github.com/AnotherKamila/songbook-web).)
 
 Spätná väzba je vítaná!
