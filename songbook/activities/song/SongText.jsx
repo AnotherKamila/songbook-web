@@ -6,10 +6,13 @@ import './song.sass'
 
 const Chord = ({chord}) => <span className='chord'>{chord}</span>
 
+const notation_normalize   = (c, is_german) => is_german ? c.replace('H', 'B') : c
+const notation_denormalize = (c, is_german) => is_german ? c.replace('B', 'H') : c
+
 // abc2svg is much better at transposing chords than me. I should say I'm not
 // proud of this, but I kinda am.
-function transpose_chords(n, chords) {
-    if (n == 0) return chords
+function transpose_chords(n, chords, german_notation_in=true, german_notation_out=true) {
+    chords = chords.map(c => notation_normalize(c, german_notation_in))
     let res_chords = []
     function eat_chunk(chunk) {
         let ms = chunk.match(/<text class="f2"[^>]*>[^<]+<\/text>/g)
@@ -19,7 +22,7 @@ function transpose_chords(n, chords) {
     let preamble = '%%transpose '+n+'\nX:1\nL:1/2\nM:2/4\nK:C\nV:1\n'
     let v = chords.map(ch => '"'+ch+'" A |').join('') + ']'
     evil_hack.tosvg('[transpose hack]', preamble+v)
-    return res_chords
+    return res_chords.map(c => notation_denormalize(c, german_notation_out))
 }
 
 const Stanza = ({stanza, transpose}) => {
