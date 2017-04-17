@@ -1,5 +1,6 @@
 require('es6-promise').polyfill();
 path = require('path')
+GitRevisionPlugin = require('git-revision-webpack-plugin')
 
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 var webpack = require('webpack');
@@ -32,6 +33,9 @@ module.exports = {
         new LodashModuleReplacementPlugin,
         new webpack.optimize.OccurrenceOrderPlugin,
         // new webpack.optimize.UglifyJsPlugin,
+        new webpack.DefinePlugin({
+            GIT_VERSION: JSON.stringify((new GitRevisionPlugin()).version()),
+        }),
     ],
     devServer: {
         hot:    true,
