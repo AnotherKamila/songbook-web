@@ -50,6 +50,7 @@ export class BookView extends React.Component {
 
 
     fuse_getFn = (obj, path) => {
+        if (!obj[path]) return null
         return has_funnychars(this.props.query) ? obj[path] : asciify(obj[path])
     }
 
