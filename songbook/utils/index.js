@@ -1,4 +1,3 @@
-import {API_URL} from '../../config.js'
 import _ from 'lodash'
 
 export const m = (old, over) => Object.assign({}, old, over)

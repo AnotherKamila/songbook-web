@@ -1,9 +1,10 @@
 require('es6-promise').polyfill();
 path = require('path')
-GitRevisionPlugin = require('git-revision-webpack-plugin')
 
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 var webpack = require('webpack');
+
+var build_config = require('./build_config.js')
 
 module.exports = {
     devtool: "source-map",
@@ -33,9 +34,7 @@ module.exports = {
         new LodashModuleReplacementPlugin,
         new webpack.optimize.OccurrenceOrderPlugin,
         // new webpack.optimize.UglifyJsPlugin,
-        new webpack.DefinePlugin({
-            GIT_VERSION: JSON.stringify((new GitRevisionPlugin()).version()),
-        }),
+        new webpack.DefinePlugin(build_config),
     ],
     devServer: {
         hot:    true,
