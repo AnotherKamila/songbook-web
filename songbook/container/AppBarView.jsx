@@ -3,6 +3,8 @@ import {AppBar, IconButton, IconMenu, MenuItem, TextField} from 'material-ui'
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
 import {FormattedMessage as T} from 'react-intl'
 
+import {m} from '../utils'
+
 // TODO :D
 const MoreMenu = (props) => (
     <IconMenu {...props}
@@ -16,11 +18,11 @@ const MoreMenu = (props) => (
 );
 MoreMenu.muiName = 'IconMenu';
 
-export const AppBarView = ({content, title_id, onDrawerOpenRequest}) => (
+export const AppBarView = ({content, title_id, onDrawerOpenRequest, style}) => (
     <AppBar title={content ? content : <T id={title_id ? title_id : 'TODO'} />}
             iconElementRight={<MoreMenu/>}
             onLeftIconButtonTouchTap={()=>onDrawerOpenRequest(true)}
-            style={{position: 'fixed', top: 0}} />
+            style={m(style, {position: 'fixed', top: 0})} />
 )
 AppBarView.propTypes = {
     content:             React.PropTypes.element,
