@@ -1,12 +1,13 @@
 import React from 'react'
 import {FormattedMessage} from 'react-intl'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
 import {AppBarView} from './AppBarView.jsx'
 import {AppDrawer} from './AppDrawer'
 
 import '../songbook.sass'
 
-export class ContainerView extends React.Component {
+class ContainerView_ extends React.Component {
     constructor(props) {
         super(props)
         this.state = {drawer_open: false}
@@ -18,7 +19,7 @@ export class ContainerView extends React.Component {
 
     render() {
         return (
-            <div className='songbook-container'>
+            <div className='songbook-container' style={{background: this.props.muiTheme.palette.canvasColor}}>
                 <AppBarView onDrawerOpenRequest={this.drawer_set_open}
                             content={this.props.children.props.route.appbar_content}
                             title_id={this.props.children.props.route.appbar_title_id} />
@@ -32,7 +33,9 @@ export class ContainerView extends React.Component {
         )
     }
 }
-ContainerView.propTypes = {
+ContainerView_.propTypes = {
     children: React.PropTypes.node,
     onDrawerNavRequest: React.PropTypes.func.isRequired,
 }
+
+export const ContainerView = muiThemeable()(ContainerView_)

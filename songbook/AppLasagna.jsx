@@ -17,7 +17,7 @@ import sk from 'react-intl/locale-data/sk'
 import messages from '../translations/messages.yml'
 
 import {Container, container_reducer} from './container'
-import {songbook_theme} from './theme'
+import {my_theme, my_theme_night} from './theme'
 
 ///// INIT /////
 
@@ -42,10 +42,10 @@ export const middleware = compose(
 
 ///// COMPONENT /////
 
-export const AppLasagna = ({store, routes, language}) => (
+export const AppLasagna = ({store, routes, settings}) => (
     <Provider store={store}>
-        <MuiThemeProvider muiTheme={songbook_theme}>
-            <IntlProvider locale={language} messages={messages[language]}>
+        <MuiThemeProvider muiTheme={settings.night_mode ? my_theme_night : my_theme}>
+            <IntlProvider locale={settings.language} messages={messages[settings.language]}>
                 <Router history={syncHistoryWithStore(hashHistory, store)}>
                     <Route component={Container}>
                         {routes.map(props => <Route key={props.name} path={props.path} component={props.component} {...props}/>)}
@@ -58,5 +58,5 @@ export const AppLasagna = ({store, routes, language}) => (
 AppLasagna.propTypes = {
     store:    React.PropTypes.object.isRequired,
     routes:   React.PropTypes.array.isRequired,
-    language: React.PropTypes.string.isRequired,
+    settings: React.PropTypes.object.isRequired,
 }

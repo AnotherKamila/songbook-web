@@ -20,6 +20,10 @@ export class SongAbc extends React.Component {
         this.setState({svg: this.svg})
     }
 
+    style_svg = () => (
+        '<style scoped>.song-abc svg {color:'+this.props.text_color+'}</style>'
+    )
+
     render_svg = () => {
         if (!this.state.width) return; // ...and call me in a while
         this.svg = ''
@@ -49,6 +53,7 @@ export class SongAbc extends React.Component {
         } else {
             div = (
                 <div className="song-abc">
+                    <div dangerouslySetInnerHTML={{__html: this.style_svg()}} />
                     <div dangerouslySetInnerHTML={{__html: this.state.svg}} />
                 </div>
             )

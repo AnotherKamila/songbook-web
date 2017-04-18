@@ -1,5 +1,6 @@
 import React from 'react'
 import {DropDownMenu, MenuItem} from 'material-ui'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 import {FormattedMessage as T} from 'react-intl'
 import _ from 'lodash'
 
@@ -25,15 +26,16 @@ Transpose.propTypes = {
     onChange: React.PropTypes.func,
 }
 
-export class SongView extends React.Component {
+class SongView_ extends React.Component {
     constructor(props) {
         super(props);
         this.state = {transpose: 0}
     }
     render() {
         let data = this.props.data
+        let color = this.props.muiTheme.palette.textColor
         return (
-            <div className="content-wrapper">
+            <div className="content-wrapper" style={{color: color}}>
                 <div className='content padded song-view'>
                     <header>
                         <div className='song-transpose'>
@@ -46,13 +48,15 @@ export class SongView extends React.Component {
                         <p className='song-comment'>{data.comment}</p>
                         <p className='song-link'><a title='Link' href={data.link}>{data.link}</a></p>
                     </header>
-                    {data.abc  ? <SongAbc  abc={data.abc}   transpose={this.state.transpose}/> : null}
-                    {data.text ? <SongText text={data.text} transpose={this.state.transpose}/> : null}
+                    {data.abc  ? <SongAbc  abc={data.abc}   transpose={this.state.transpose} text_color={color}/> : null}
+                    {data.text ? <SongText text={data.text} transpose={this.state.transpose} text_color={color}/> : null}
                 </div>
             </div>
         )
     }
 }
-SongView.propTypes = {
+SongView_.propTypes = {
     data: React.PropTypes.object.isRequired,
 }
+
+export const SongView = muiThemeable()(SongView_)

@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {FormattedMessage} from 'react-intl'
-import {DropDownMenu, MenuItem, Paper} from 'material-ui'
+import {DropDownMenu, MenuItem, List, ListItem, Subheader, Toggle, Paper} from 'material-ui'
 import {FormattedMessage as T} from 'react-intl'
+
 
 import messages from '../../../translations/messages.yml'
 
@@ -26,7 +27,7 @@ LangSelect.propTypes = {
 
 const SettingsForm = (props) => (
     <form>
-        <LangSelect onChange={props.onLanguageChange} value={props.language} />
+        <LangSelect onChange={lang => props.onChange({language: lang})} value={props.language} />
     </form>
 )
 SettingsForm.propTypes = {
@@ -38,6 +39,12 @@ const SettingsScreen = props => (
     <div className="content-wrapper">
         <div className='content padded'>
             <Paper className='paper-responsive padded'>
+                <List>
+                    <Subheader><T id='settings.section.general' /></Subheader>
+                    <ListItem primaryText={<T id='settings.label.night_mode' />}
+                              rightToggle={<Toggle toggled={props.night_mode}
+                                                   onToggle={(e, toggled) => props.onChange({night_mode: toggled})} />} />
+                </List>
                 <SettingsForm {...props} />
             </Paper>
         </div>
@@ -47,8 +54,8 @@ const SettingsScreen = props => (
 export const Settings = connect(
     state => state.settings,
     dispatch => ({
-        onLanguageChange: (lang) => {
-            dispatch(CHANGE({language: lang}))
+        onChange: (new_settings) => {
+            dispatch(CHANGE(new_settings))
         },
     })
 )(SettingsScreen)

@@ -1,29 +1,32 @@
 import React from 'react'
 import {AppBar, IconButton, IconMenu, MenuItem, TextField} from 'material-ui'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 import {FormattedMessage as T} from 'react-intl'
 
-// TODO bleeergh!
-const search_style = {
-    line: {borderColor: '#839496'},
-    line_focused: {borderColor: '#fff'},
-    hint: {color: '#839496'},
-    input: {color: '#fff'},
-}
+// Bleeergh!
+const rgba = (hex, alpha) => (
+    'rgba(' + parseInt(hex.slice(1, 3), 16) + ',' +
+              parseInt(hex.slice(3, 5), 16) + ',' +
+              parseInt(hex.slice(5, 7), 16) + ',' +
+              alpha + ')'
+)
 
-export const SearchFieldView = ({query, onSearch, current_book}) => (
+const SearchFieldView_ = ({query, onSearch, current_book, muiTheme}) => (
 <TextField hintText={<T id='app.search_field.hint'/>}
+           hintStyle={{color: rgba(muiTheme.appBar.textColor, 0.5)}}
+           underlineStyle={{borderColor: rgba(muiTheme.appBar.textColor, 0.5)}}
+           inputStyle={{color: muiTheme.appBar.textColor}}
+           underlineFocusStyle={{borderColor: muiTheme.appBar.textColor}}
            value={query}
            onChange={(e, val) => onSearch(val, current_book)}
            fullWidth={true}
-           hintStyle={search_style.hint}
-           inputStyle={search_style.input}
-           underlineStyle={search_style.line}
-           underlineFocusStyle={search_style.line_focused}
            style={{position: 'relative', top: '-6px'}} />
 )
-SearchFieldView.propTypes = {
+SearchFieldView_.muiName = 'TextField'
+SearchFieldView_.propTypes = {
     query: React.PropTypes.string,
     onSearch: React.PropTypes.func.isRequired,
     current_book: React.PropTypes.string.isRequired,
 }
-SearchFieldView.muiName = 'TextField'
+
+export const SearchFieldView = muiThemeable()(SearchFieldView_)

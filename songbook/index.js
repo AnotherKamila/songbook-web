@@ -18,7 +18,7 @@ export function create_store() {
 }
 
 export const Songbook = connect(state => ({
-    language: state.settings.language,
+    settings: state.settings,
     routes: app_index,
 }))(AppLasagna)
 

@@ -7,4 +7,5 @@ const get_default_language = () => {
 
 export const default_state = {
     language: get_default_language(),
+    night_mode: false,
 }

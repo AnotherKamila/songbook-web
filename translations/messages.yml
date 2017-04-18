@@ -9,6 +9,8 @@ sk:
 
   settings.title: Nastavenia
   settings.label.lang: 'Jazyk: {lang}'
+  settings.label.night_mode: 'Nočný režim / tmavá téma'
+  settings.section.general: 'Všeobecné'
 
   feedback.title: Napíšte mi
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfIzvHwJlmVMua0Zz9WFpv4jGrHRDzZNUvfUBui6hdJn8qByQ/viewform?embedded=true&hl=sk
@@ -36,6 +38,8 @@ en:
 
   settings.title: Settings
   settings.label.lang: 'Language: {lang}'
+  settings.label.night_mode: 'Night mode / dark theme'
+  settings.section.general: 'General'
 
   feedback.title: Feedback
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfywW3efhyw8-Wzrdz7BYLWWQQ9uEyrDoZJaN5rJbiTtk3C4Q/viewform?embedded=true
