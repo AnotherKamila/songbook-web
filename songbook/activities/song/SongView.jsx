@@ -35,7 +35,7 @@ class SongView_ extends React.Component {
         let data = this.props.data
         let color = this.props.muiTheme.palette.textColor
         return (
-            <div className="content-wrapper" style={{color: color}}>
+            <div className="content-wrapper">
                 <div className='content padded song-view'>
                     <header>
                         <div className='song-transpose'>

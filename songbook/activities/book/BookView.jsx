@@ -72,7 +72,7 @@ export class BookView extends React.Component {
                 <div className='content padded'>
                     <Paper className="paper-responsive">
                         <SelectableList onChange={(e, val) => this.props.onNavRequest(val)}>
-                            <Subheader>{this.props.data.title}</Subheader>
+                            <Subheader><T id={this.props.data.title} /></Subheader>
                             {this.state.items.map(({error, title, artist, ref}) => (
                                 <ListItem key={ref}
                                           primaryText={title ? title : ref}

@@ -5,7 +5,9 @@ sk:
   home.title: Môj spevník
 
   public.title: Verejné spevníky
+  public_books: Verejné spevníky  # hack: I stick book name into <T> in case it happens to be translatable :D
   all_songs.title: Všetky verejné piesne
+  public_songs:    Všetky verejné piesne
 
   settings.title: Nastavenia
   settings.label.lang: 'Jazyk: {lang}'
@@ -34,7 +36,9 @@ en:
   home.title: My songbook
 
   public.title: Public songbooks
+  public_books: Public songbooks  # hack: I stick book name into <T> in case it happens to be translatable :D
   all_songs.title: All public songs
+  public_songs:    All public songs
 
   settings.title: Settings
   settings.label.lang: 'Language: {lang}'

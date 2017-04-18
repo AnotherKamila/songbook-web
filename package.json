@@ -58,7 +58,8 @@
     "webpack-dev-server": "~1.16.2"
   },
   "scripts": {
-    "build": "$(npm bin)/webpack --colors --progress",
+    "build": "$(npm bin)/webpack -p --colors --progress",
+    "build-dev": "$(npm bin)/webpack --colors --progress",
     "start": "$(npm bin)/webpack-dev-server --hot"
   },
   "repository": {

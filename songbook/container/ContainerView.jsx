@@ -20,6 +20,7 @@ class ContainerView_ extends React.Component {
     render() {
         return (
             <div className='songbook-container' style={{
+                        color: this.props.muiTheme.palette.textColor,
                         backgroundColor: this.props.muiTheme.palette.canvasColor,
                         transition: 'background-color 450ms',
                     }}>
