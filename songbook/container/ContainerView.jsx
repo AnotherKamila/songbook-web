@@ -19,7 +19,10 @@ class ContainerView_ extends React.Component {
 
     render() {
         return (
-            <div className='songbook-container' style={{background: this.props.muiTheme.palette.canvasColor}}>
+            <div className='songbook-container' style={{
+                        backgroundColor: this.props.muiTheme.palette.canvasColor,
+                        transition: 'background-color 450ms',
+                    }}>
                 <AppBarView onDrawerOpenRequest={this.drawer_set_open}
                             content={this.props.children.props.route.appbar_content}
                             title_id={this.props.children.props.route.appbar_title_id} />
