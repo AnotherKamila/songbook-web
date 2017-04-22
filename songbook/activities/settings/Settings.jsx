@@ -60,7 +60,7 @@ const SettingsScreen = (props) => (
 )
 
 export const Settings = connect(
-    state => m(state.settings, {user: state.user.profile}),
+    state => m(state.settings, {user: state.user ? state.user.profile : null}),
     dispatch => ({
         onChange: (new_settings) => dispatch(CHANGE(new_settings)),
     })

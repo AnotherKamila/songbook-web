@@ -35,7 +35,7 @@ export const MySongbookContainer = connect(
     state => ({user: state.user}),
 )(({user}) => (
     <div className='content padded'>
-        {user ? <MySongbook user={user}/> : <ShouldSignIn/>}
+        {user && user.id ? <MySongbook user={user}/> : <ShouldSignIn/>}
     </div>
 ))
 
