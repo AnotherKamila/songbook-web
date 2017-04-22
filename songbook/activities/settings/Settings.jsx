@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {FormattedMessage} from 'react-intl'
-import {DropDownMenu, MenuItem, List, ListItem, Subheader, Toggle, Paper} from 'material-ui'
+import {DropDownMenu, MenuItem, List, ListItem, Subheader, Toggle, Paper, Avatar} from 'material-ui'
 import {FormattedMessage as T} from 'react-intl'
-
+import {SignInController} from '../../user/index.jsx'
 
 import messages from '../../../translations/messages.yml'
+import {m} from '../../utils'
 
 import {CHANGE} from './actions.js'
 
@@ -35,15 +36,22 @@ SettingsForm.propTypes = {
     onLanguageChange: React.PropTypes.func,
 }
 
-const SettingsScreen = props => (
+const SettingsScreen = (props) => (
     <div className="content-wrapper">
         <div className='content padded'>
             <Paper className='paper-responsive padded'>
                 <List>
-                    <Subheader><T id='settings.section.general' /></Subheader>
-                    <ListItem primaryText={<T id='settings.label.night_mode' />}
+                    <Subheader><T id='settings.section.general'/></Subheader>
+                    <ListItem primaryText={<T id='settings.label.night_mode.primary'/>}
+                              secondaryText={<div><T id='settings.label.night_mode.secondary'/></div>}
                               rightToggle={<Toggle toggled={props.night_mode}
                                                    onToggle={(e, toggled) => props.onChange({night_mode: toggled})} />} />
+                    {props.user ?
+                        <ListItem primaryText={<T id='settings.sign_out'/>}
+                              secondaryText={<div><T id='settings.logged_in_as' values={{name: props.user.name}}/></div>}
+                              rightAvatar={<Avatar src={props.user.image}/>}
+                              onTouchTap={SignInController.sign_out}/>
+                        : ''}
                 </List>
                 <SettingsForm {...props} />
             </Paper>
@@ -52,10 +60,8 @@ const SettingsScreen = props => (
 )
 
 export const Settings = connect(
-    state => state.settings,
+    state => m(state.settings, {user: state.user.profile}),
     dispatch => ({
-        onChange: (new_settings) => {
-            dispatch(CHANGE(new_settings))
-        },
+        onChange: (new_settings) => dispatch(CHANGE(new_settings)),
     })
 )(SettingsScreen)

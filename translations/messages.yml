@@ -1,8 +1,11 @@
 sk:
   app.title: Spevník
   app.search_field.hint: Vyhľadávanie
+  app.sign_in_with_google: Prihlásiť sa cez Google
 
   home.title: Môj spevník
+  home.you_should_sign_in: Na vytvorenie Tvojho spevníka sa treba prihlásiť.
+  home.you_dont_have_to_sign_in: Aj ak sa nechceš prihlásiť, môžeš vidieť verejné piesne a spevníky (viď menu vľavo).
 
   public.title: Verejné spevníky
   public_books: Verejné spevníky  # hack: I stick book name into <T> in case it happens to be translatable :D
@@ -10,9 +13,12 @@ sk:
   public_songs:    Všetky verejné piesne
 
   settings.title: Nastavenia
+  settings.section.general: Všeobecné
   settings.label.lang: 'Jazyk: {lang}'
-  settings.label.night_mode: 'Nočný režim / tmavá téma'
-  settings.section.general: 'Všeobecné'
+  settings.label.night_mode.primary: Tmavá téma
+  settings.label.night_mode.secondary: Nočný režim
+  settings.sign_out: Odhlásiť sa
+  settings.logged_in_as: Prihlásený/-á ako {name}
 
   feedback.title: Napíšte mi
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfIzvHwJlmVMua0Zz9WFpv4jGrHRDzZNUvfUBui6hdJn8qByQ/viewform?embedded=true&hl=sk
@@ -32,8 +38,11 @@ sk:
 en:
   app.title: Songbook
   app.search_field.hint: Search for a song
+  app.sign_in_with_google: Sign in with Google
 
   home.title: My songbook
+  home.you_should_sign_in: Log in to create your songbook.
+  home.you_dont_have_to_sign_in: If you don't want to log in, you can still browse public songs and songbooks (see the left menu).
 
   public.title: Public songbooks
   public_books: Public songbooks  # hack: I stick book name into <T> in case it happens to be translatable :D
@@ -41,9 +50,12 @@ en:
   public_songs:    All public songs
 
   settings.title: Settings
-  settings.label.lang: 'Language: {lang}'
-  settings.label.night_mode: 'Night mode / dark theme'
   settings.section.general: 'General'
+  settings.label.lang: 'Language: {lang}'
+  settings.label.night_mode.primary: Dark theme
+  settings.label.night_mode.secondary: Night mode
+  settings.sign_out: Sign out
+  settings.logged_in_as: Signed in as {name}
 
   feedback.title: Feedback
   feedback.form_url: https://docs.google.com/forms/d/e/1FAIpQLSfywW3efhyw8-Wzrdz7BYLWWQQ9uEyrDoZJaN5rJbiTtk3C4Q/viewform?embedded=true

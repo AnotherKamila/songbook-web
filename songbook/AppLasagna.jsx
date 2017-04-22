@@ -17,6 +17,7 @@ import sk from 'react-intl/locale-data/sk'
 import messages from '../translations/messages.yml'
 
 import {Container, container_reducer} from './container'
+import {SignInController} from './user/index.jsx'
 import {my_theme, my_theme_night} from './theme'
 
 ///// INIT /////
@@ -46,11 +47,13 @@ export const AppLasagna = ({store, routes, settings}) => (
     <Provider store={store}>
         <MuiThemeProvider muiTheme={settings.night_mode ? my_theme_night : my_theme}>
             <IntlProvider locale={settings.language} messages={messages[settings.language]}>
-                <Router history={syncHistoryWithStore(hashHistory, store)}>
-                    <Route component={Container}>
-                        {routes.map(props => <Route key={props.name} path={props.path} component={props.component} {...props}/>)}
-                    </Route>
-                </Router>
+                <SignInController>
+                    <Router history={syncHistoryWithStore(hashHistory, store)}>
+                        <Route component={Container}>
+                            {routes.map(props => <Route key={props.name} path={props.path} component={props.component} {...props}/>)}
+                        </Route>
+                    </Router>
+                </SignInController>
             </IntlProvider>
         </MuiThemeProvider>
     </Provider>

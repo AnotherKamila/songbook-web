@@ -3,6 +3,7 @@ import {combineReducers, createStore} from 'redux'
 import {routerReducer} from 'react-router-redux'
 
 import {search_reducer} from './search'
+import {user_reducer} from './user/index.jsx'
 import {app_index} from './activities/index.jsx'
 import {AppLasagna, init, middleware} from './AppLasagna'
 
@@ -10,6 +11,7 @@ export function create_store() {
     let reducers = {
         routing: routerReducer,
         search: search_reducer,
+        user: user_reducer,
     }
     app_index.forEach(({name, reducer}) => {reducers[name] = reducer})
     let store = createStore(combineReducers(reducers), middleware)
