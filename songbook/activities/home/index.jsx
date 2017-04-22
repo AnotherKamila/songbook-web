@@ -27,7 +27,7 @@ const ReCaptcha = ({on_submit}) => (
 const MySongbook = ({user}) => (
     <div>
         <span>props.user: {JSON.stringify(user)}</span>
-        {user.profile ? <img src={user.profile.image} /> : ''}
+        <img src={user.profile.image}/>
     </div>
 )
 
@@ -35,7 +35,7 @@ export const MySongbookContainer = connect(
     state => ({user: state.user}),
 )(({user}) => (
     <div className='content padded'>
-        {user.profile ? <MySongbook user={user}/> : <ShouldSignIn/>}
+        {user ? <MySongbook user={user}/> : <ShouldSignIn/>}
     </div>
 ))
 

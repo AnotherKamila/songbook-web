@@ -9,13 +9,13 @@ export const USER_CHANGE  = createAction('user/USER_CHANGE')
 export const SIGN_OUT_REQ = createAction('user/SIGN_OUT_REQ')
 
 export const user_reducer = handleActions({
-    'user/USER_CHANGE':  (state, action) => m(state, {profile: action.payload}),
-}, {profile: null})
+    'user/USER_CHANGE':  (state, action) => m(state, action.payload),
+}, null)
 
 export const SignInController = connect(
     state => ({user: state.user}),
     dispatch => ({
-        on_signin_change: (profile) => dispatch(USER_CHANGE(profile)),
+        on_signin_change: (user) => dispatch(USER_CHANGE(user)),
     })
 )(class SignInController extends React.Component {
     constructor(props) {
@@ -39,9 +39,12 @@ export const SignInController = connect(
         if (user.isSignedIn()) {
             const g_profile = user.getBasicProfile()
             this.props.on_signin_change({
-                name: g_profile.getName(),
                 id: g_profile.getId(),
-                image: g_profile.getImageUrl()
+                id_token: user.getAuthResponse().id_token,
+                profile: {
+                    name: g_profile.getName(),
+                    image: g_profile.getImageUrl()
+                },
             })
         } else {
             this.props.on_signin_change(null)
