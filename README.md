@@ -1,7 +1,7 @@
 Songbook
 ========
 
-Check it out: https://songbook.tumbolia.tk/#/intro
+Check it out: https://spevnik.tumbolia.tk/#/intro
 
 <!-- [![Heroku status](https://heroku-badge.herokuapp.com/?app=spevnik47)](https://spevnik47-web.herokuapp.com/) -->
 [![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://david-dm.org/anotherkamila/songbook-web)
