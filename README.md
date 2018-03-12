@@ -4,8 +4,9 @@ Songbook
 Check it out: https://spevnik.tumbolia.tk/#/intro
 
 <!-- [![Heroku status](https://heroku-badge.herokuapp.com/?app=spevnik47)](https://spevnik47-web.herokuapp.com/) -->
-[![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://david-dm.org/anotherkamila/songbook-web)
 <!-- [![Floobits Status](https://floobits.com/kamila/songbook.svg)](https://floobits.com/kamila/songbook/redirect) -->
+[![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://david-dm.org/anotherkamila/songbook-web)
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/AnotherKamila)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/anotherkamila/songbook-web/issues)
 
 
