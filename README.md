@@ -8,7 +8,7 @@ Check it out: https://spevnik.tumbolia.tk/#/intro
 [![Dependencies Status](https://david-dm.org/anotherkamila/songbook-web.svg)](https://david-dm.org/anotherkamila/songbook-web)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/AnotherKamila)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/anotherkamila/songbook-web/issues)
-
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/kamila.svg)](https://liberapay.com/kamila/donate)
 
 Awesome Songbook Web App. Wheeeee!
 ----------------------------------
